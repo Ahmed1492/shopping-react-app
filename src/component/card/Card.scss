@@ -1,0 +1,48 @@
+.card {
+  overflow: hidden;
+
+  .images {
+    display: flex;
+    width: 280px;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .imag1 {
+      z-index: 1;
+    }
+
+    .imag2:hover {
+      z-index: 2;
+    }
+
+    .imag1:hover {
+      z-index: 0;
+    }
+  }
+
+  .texts {
+    text-align: center;
+
+    h3 {
+      font-size: 22px;
+      font-weight: 200;
+    }
+
+    span {
+      font-weight: 200;
+    }
+
+    span::before {
+      content: '$';
+    }
+  }
+}

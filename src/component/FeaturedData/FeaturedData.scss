@@ -1,0 +1,42 @@
+.featuredData {
+  .container {
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      /* padding: 43px 196px; */
+      width: 77%;
+      margin: auto; 
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      flex: 1;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    p {
+      flex: 3;
+      color: gray;
+      font-size: 17px;
+    }
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+  }
+}
+
+@media screen and (max-width :800px) {
+  .text {
+    display: block !important;
+  }
+}
