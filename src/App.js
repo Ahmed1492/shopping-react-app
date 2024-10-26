@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import { ProductCategory } from './component/productCategory/ProductCategory';
 import { HomePage } from './page/homePage/HomePage';
 import { Product } from './component/product/Product';
@@ -10,7 +10,7 @@ import { Footer } from './component/Footer/Footer';
 export default function App() {
   return (
     <div className='app'>
-      <BrowserRouter>
+      <HashRouter>
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -20,7 +20,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </div>
 
   );
