@@ -150,11 +150,11 @@ export const ProductCategory = () => {
 
   useEffect(() => {
     if (param.category === "woman") {
-      getProducts("https://dummyjson.com/c/e38d-3f2c-4313-ac31");
+      getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
     } else if (param.category === "men") {
       getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
     }
-  }, [param]); 
+  }, [param]);
 
   return (
     <h2 className="productCategory">

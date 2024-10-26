@@ -22,12 +22,14 @@ export const NavBar = () => {
             <span>USD</span> <ExpandMoreIcon />
           </div>
           <div className="item">
-            <Link className="link" to="/product/2">
+            <Link className="link" to="/products/woman">
               Women
             </Link>
           </div>
           <div className="item">
-            <Link className="link">men</Link>
+            <Link to="products/men" className="link">
+              men
+            </Link>
           </div>
           <div className="item">
             <Link className="link">Children</Link>
