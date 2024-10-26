@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Product.scss";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 const images = [
   "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 
@@ -12,6 +13,33 @@ export const Product = () => {
   const [totalPrice, setTotalPrice] = useState(price);
   const [currentImage, setCurrentImage] = useState(0);
   const [numOfProduct, setNumOfProduct] = useState(1);
+
+  const param = useParams();
+
+  const [allProducts, setAllProducts] = useState([]);
+
+  const getMenProducts = async () => {
+    try {
+      let myResponse = await axios.get(
+        "https://dummyjson.com/c/3b6e-8285-4ac0-bf6d"
+      );
+      setAllProducts(myResponse?.data[param.id - 1]);
+      console.log(myResponse.data[0].images[0]);
+      // setTotalPrice(allProducts.currentPrice);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const getProducts = async (link) => {
+    try {
+      let myResponse = await axios.get(link);
+      setAllProducts(myResponse?.data[param.id - 1]);
+      console.log(myResponse.data[0].images[0]);
+      // setTotalPrice(allProducts.currentPrice);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   function truncateDecimal(number, decimalPlaces) {
     const truncatedNumber = parseFloat(number.toFixed(decimalPlaces));
@@ -31,37 +59,47 @@ export const Product = () => {
     setNumOfProduct(numOfProduct > 1 ? numOfProduct - 1 : 1);
     setTotalPrice(Math.abs(truncateDecimal(price - price * numOfProduct, 4)));
   };
+
+  useEffect(() => {
+    if (param.category === "woman") {
+      getProducts("https://dummyjson.com/c/e38d-3f2c-4313-ac31");
+    } else if (param.category === "men") {
+      getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+    }
+  }, [param]);
   return (
     <div className="singleProduct">
       <div className="container">
         <div className="left">
           <div className="sliderImage">
             <div className="images">
-              <img src={images[0]} onClick={() => setCurrentImage(0)} alt="" />
-              <img src={images[1]} onClick={() => setCurrentImage(1)} alt="" />
+              {allProducts?.images?.map(
+                (img, index) => (
+                  <img
+                    src={img}
+                    onClick={() => setCurrentImage(index)}
+                    alt=""
+                  />
+                )
+                //  <img src={images[1]} onClick={() => setCurrentImage(1)} alt="" />
+              )}
             </div>
             <div className="mainImage">
-              <img src={images[currentImage]} alt="" />
+              <img
+                src={allProducts.images && allProducts?.images[currentImage]}
+                alt=""
+              />
             </div>
           </div>
         </div>
         <div className="right">
           <div className="details">
-            <h3>Long Sleeve Graphic T-shirt</h3>
+            <h3>{allProducts.title}</h3>
             <div>
-              <span>Price : ${price}</span>{" "}
-              <span>
-                Total Price :${numOfProduct > 1 ? totalPrice : price}{" "}
-              </span>
+              <del>Price : ${allProducts?.oldPrice}</del>{" "}
+              <span>Price : ${allProducts?.currentPrice}</span>{" "}
             </div>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa
-              illo distinctio modi nulla aliquid eos, libero esse nam architecto
-              temporibus odio ad corrupti, vitae rerum beatae expedita
-              laudantium eligendi? Itaque consectetur adipisicing elit. Culpa
-              illo distinctio modi nulla aliquid eos, libero esse nam architecto
-              temporibus beatae expedita laudantium eligendi? Itaqu
-            </p>
+            <p>{allProducts?.description}</p>
           </div>
 
           <div className="addToCart">

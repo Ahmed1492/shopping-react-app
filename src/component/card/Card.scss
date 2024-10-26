@@ -30,15 +30,31 @@
   }
 
   .texts {
-    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
     h3 {
-      font-size: 22px;
-      font-weight: 200;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0;
     }
 
-    span {
-      font-weight: 200;
+    .price {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      p {
+        margin: 0;
+        font-size: 19px;
+      }
+
+      del {
+        color: #857676;
+        font-size: 19px;
+      }
     }
 
     span::before {

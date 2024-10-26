@@ -3,55 +3,77 @@
     display: flex;
     padding: 10px 4px;
     margin-top: 1rem;
+    gap: 4rem;
+
     .left {
       flex: 2;
       height: 100%;
       overflow: hidden;
+
       .sliderImage {
         display: flex;
-
+        align-items: center;
         gap: 15px;
+
         .images {
           //   width: 9vw;
-          width: 24%;
-          height: 18vh;
+          // width: 24%;
+          // height: 18vh;
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           gap: 15px;
+          flex-wrap: wrap;
+
           img {
-            width: 100%;
-            height: 100%;
+            width: 7rem;
+            // height: 6rem;
             object-fit: cover;
+            cursor: pointer;
           }
         }
+
         .mainImage {
           //   width: 34vw;
-          width: 70%;
-          height: 90vh;
+
+
           img {
-            width: 100%;
+            width: 30rem;
+            height: 43rem;
             object-fit: cover;
           }
         }
       }
     }
+
     .right {
       flex: 2;
       height: 100%;
+
       .details {
         h3 {
           font-size: 28px;
           font-weight: 600;
         }
+
         div {
           display: flex;
-          justify-content: space-around;
+          justify-content: flex-start;
+          gap: 7rem;
+          align-items: center;
+
+          del {
+            font-size: 19px;
+            color: #a59494;
+            font-weight: 400;
+          }
+
           span {
             color: #7575ff;
             font-size: 23px;
             font-weight: 500;
           }
         }
+
         p {
           font-size: 18px;
           color: gray;
@@ -61,11 +83,13 @@
           line-height: 30px;
         }
       }
+
       .addToCart {
         .add {
           display: flex;
           align-items: center;
           gap: 20px;
+
           button {
             background-color: #d9dddf;
             color: black;
@@ -76,6 +100,7 @@
             border: none;
           }
         }
+
         .addToCart {
           background-color: #2879fe;
           color: #fff;
@@ -88,6 +113,7 @@
           /* margin-bottom: 4rem; */
           border-radius: 3px;
         }
+
         .buyLater {
           margin-top: 1rem;
           padding-top: 1rem;
@@ -101,18 +127,21 @@
           }
         }
       }
+
       .description {
         p {
           color: #b1a8a8;
           font-size: 13px;
           font-weight: 500;
         }
+
         .top {
           border-bottom: 1px solid #b1a8a8;
           width: 95%;
           line-height: 24px;
           padding-bottom: 2rem;
         }
+
         .bottom {
           margin-top: 2rem;
           display: flex;

@@ -1,5 +1,6 @@
+import axios from "axios";
 import "./ProductCategoru.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 const feturedData = [
   {
@@ -117,9 +118,44 @@ const feturedData = [
     price: 12,
   },
 ];
+
 export const ProductCategory = () => {
+  const [allProducts, setAllProducts] = useState([]);
   const [maxPrice, setMaxPrice] = useState(1000);
   const param = useParams();
+
+  console.log(param.category);
+
+  const getProducts = async (link) => {
+    try {
+      let myResponse = await axios.get(link);
+      setAllProducts(myResponse?.data);
+      console.log(myResponse.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // const getMenProducts = async () => {
+  //   try {
+  //     let myResponse = await axios.get(
+  //       "https://dummyjson.com/c/3b6e-8285-4ac0-bf6d"
+  //     );
+  //     setAllProducts(myResponse?.data[param.id - 1]);
+  //     console.log(myResponse.data[0].images[0]);
+  //     // setTotalPrice(allProducts.currentPrice);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  useEffect(() => {
+    if (param.category === "woman") {
+      getProducts("https://dummyjson.com/c/e38d-3f2c-4313-ac31");
+    } else if (param.category === "men") {
+      getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+    }
+  }, [param]); 
+
   return (
     <h2 className="productCategory">
       <div className="container">
@@ -163,16 +199,27 @@ export const ProductCategory = () => {
           <div className="rightSide">
             <div className="image">
               <img
-                src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://img.freepik.com/free-photo/stylish-young-woman-holding-money-cash-dollars-smiling-posing-satisfied-going-shopping-standing-beige-background_1258-122852.jpg?t=st=1729945659~exp=1729949259~hmac=757400c1c268bd114db048c2ce0d0f463fa44ec1104138f38896ef6b863a07cc&w=1380"
                 alt=""
               />
             </div>
             <div className="filteredCards">
-              {feturedData.map((item) => (
-                <Link to="/product/1">
+              {allProducts?.map((item, index) => (
+                <Link to={`/product/${param.category}/${index + 1} `}>
                   <div key={item.id} className="images">
-                    <img className="img1" src={item.img1} alt="" />
-                    <img className="img2" src={item.img2} alt="" />
+                    {item.images.length > 1 ? (
+                      <>
+                        <img className="img1" src={item?.images[0]} alt="" />
+                        <img className="img2" src={item?.images[1]} alt="" />)
+                      </>
+                    ) : (
+                      <img className="img" src={item?.images[0]} alt="" />
+                    )}
+                  </div>
+                  <p className="proTitle">{item.title}</p>
+                  <div className="price">
+                    <del>$232.2</del>
+                    <p>$2143</p>
                   </div>
                 </Link>
               ))}

@@ -25,7 +25,7 @@ export const Categories = () => {
               src="https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
             />
-            <Link to="/products/1">Sales</Link>
+            <Link to="/products/sale">sale</Link>
           </div>
 
           <div className="row">
@@ -33,7 +33,7 @@ export const Categories = () => {
               src="https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
             />
-            <Link to="/products/1">Sales</Link>
+            <Link to="/products/woman">WOMEN</Link>
           </div>
         </div>
 
@@ -43,7 +43,7 @@ export const Categories = () => {
               src="https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
             />
-            <Link to="/products/1">Sales</Link>
+            <Link to="/products/newSesson">NEW SESSON</Link>
           </div>
         </div>
 
@@ -56,7 +56,7 @@ export const Categories = () => {
                   alt=""
                 />
 
-                <Link to="/products/1">Sales</Link>
+                <Link to="/products/men">MEN</Link>
               </div>
             </div>
             <div className="col">
@@ -65,7 +65,7 @@ export const Categories = () => {
                   src="https://images.pexels.com/photos/2703202/pexels-photo-2703202.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt=""
                 />
-                <Link to="/products/1">Sales</Link>
+                <Link to="/products/accessories">ACCESSORIES</Link>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ export const Categories = () => {
               src="https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
             />
-            <Link to="/products/1">Sales</Link>
+            <Link to="/products/shoses">SHOSES</Link>
           </div>
         </div>
       </div>
