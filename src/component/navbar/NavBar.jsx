@@ -10,63 +10,74 @@ import "./Navbar.scss";
 import { Cart } from "../cart/Cart";
 export const NavBar = () => {
   const [isOppen, setIsOppen] = useState(false);
-  console.log(isOppen);
+  // console.log(isOppen);
   return (
     <div className="navbar">
       <div className="wrapper">
         <div className="left">
-          <div className="item">
-            <img src={flag} alt="" /> <ExpandMoreIcon />
-          </div>
-          <div className="item">
-            <span>USD</span> <ExpandMoreIcon />
-          </div>
-          <div className="item">
-            <Link className="link" to="/products/woman">
-              Women
-            </Link>
-          </div>
-          <div className="item">
-            <Link to="products/men" className="link">
-              men
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link">Children</Link>
-          </div>
-          <div className="item">
-            <Link className="link">Accessory</Link>
-          </div>
+          <ul>
+            <li>
+              <img src={flag} alt="" /> <ExpandMoreIcon />
+            </li>
+            <li>
+              <span>USD</span> <ExpandMoreIcon />
+            </li>
+            <li>
+              <Link className="link" to="/products/men">
+                Men
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to="/products/woman">
+                Women
+              </Link>
+            </li>
+            <li>
+              <Link to="products/children" className="link">
+                Children
+              </Link>
+            </li>
+            <li>
+              <Link className="link">Accessory</Link>
+            </li>
+            <li>
+              <Link to="products/shoses" className="link">
+                Shoses
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div className="center">
           <Link to="/" className="link">
-            {" "}
             Store
           </Link>
         </div>
 
         <div className="right">
-          <div className="item">
-            <Link className="link" to="/">
-              HomePage
-            </Link>
-          </div>
-          <div className="item">
-            <Link to="/about" className="link">
-              About
-            </Link>
-          </div>
-          <div className="item">
-            <Link to="/contact" className="link">
-              Contact
-            </Link>
-          </div>
-          <div className="item">
-            <Link to="/store" className="link">
-              Store
-            </Link>
-          </div>
+          <ul>
+            <li>
+              <Link className="link" to="/">
+                HomePage
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="link">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="link">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link to="/store" className="link">
+                Store
+              </Link>
+            </li>
+          </ul>
+
           <div className="icons">
             <SearchIcon />
             <PersonOutlineIcon />

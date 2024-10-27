@@ -61,10 +61,27 @@ export const Product = () => {
   };
 
   useEffect(() => {
+    if (param.category === "men") {
+      if (param.type === "shirts") {
+        getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+      } else if (param.type === "Jackets") {
+        getProducts();
+      } else if (param.type === "hat") {
+        getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
+      } else if (param.type === "shoses") {
+        getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+      }
+    }
     if (param.category === "woman") {
-      getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
-    } else if (param.category === "men") {
-      getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+      if (param.type === "shirts") {
+        getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
+      } else if (param.type === "Jackets") {
+        getProducts();
+      } else if (param.type === "hat") {
+        getProducts("https://dummyjson.com/c/3e2d-e47d-4a87-86e1");
+      } else if (param.type === "shoses") {
+        getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+      }
     }
   }, [param]);
   return (
@@ -96,8 +113,8 @@ export const Product = () => {
           <div className="details">
             <h3>{allProducts.title}</h3>
             <div>
-              <del>Price : ${allProducts?.oldPrice}</del>{" "}
-              <span>Price : ${allProducts?.currentPrice}</span>{" "}
+              <del>Price : {allProducts?.oldPrice} EGP</del>
+              <span>Price :{allProducts?.currentPrice} EGP</span>
             </div>
             <p>{allProducts?.description}</p>
           </div>

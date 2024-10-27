@@ -1,180 +1,133 @@
 import axios from "axios";
 import "./ProductCategoru.scss";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-const feturedData = [
-  {
-    id: 1,
-    img1: "https://images.pexels.com/photos/1254041/pexels-photo-1254041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    img2: "https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Long Sleave Graphic T-shirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-  {
-    id: 2,
-    img2: "https://images.pexels.com/photos/1759622/pexels-photo-1759622.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    img1: "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "Coat",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-
-  {
-    id: 3,
-    img1: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    img2: "https://images.pexels.com/photos/1457983/pexels-photo-1457983.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "skirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-
-  {
-    id: 4,
-    img2: "https://images.pexels.com/photos/2065200/pexels-photo-2065200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    img1: "https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "skirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-  {
-    id: 5,
-    img2: "https://images.pexels.com/photos/1254041/pexels-photo-1254041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    img1: "https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Long Sleave Graphic T-shirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-  {
-    id: 6,
-    img1: "https://images.pexels.com/photos/1759622/pexels-photo-1759622.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    img2: "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "Coat",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-
-  {
-    id: 7,
-    img2: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    img1: "https://images.pexels.com/photos/1457983/pexels-photo-1457983.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "skirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-
-  {
-    id: 8,
-    img1: "https://images.pexels.com/photos/2065200/pexels-photo-2065200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    img2: "https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "skirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-  {
-    id: 9,
-    img1: "https://images.pexels.com/photos/1254041/pexels-photo-1254041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    img2: "https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Long Sleave Graphic T-shirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-  {
-    id: 10,
-    img2: "https://images.pexels.com/photos/1759622/pexels-photo-1759622.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    img1: "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "Coat",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-
-  {
-    id: 11,
-    img1: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    img2: "https://images.pexels.com/photos/1457983/pexels-photo-1457983.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "skirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-
-  {
-    id: 12,
-    img2: "https://images.pexels.com/photos/2065200/pexels-photo-2065200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    img1: "https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    title: "skirt",
-    isNew: true,
-    oldPrice: 19,
-    price: 12,
-  },
-];
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { FilterProducts } from "../../page/filterProducts/FilterProducts";
 
 export const ProductCategory = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [maxPrice, setMaxPrice] = useState(1000);
+  const [selectedItem, setSelectedItem] = useState("shirts");
+  let test;
   const param = useParams();
-
-  console.log(param.category);
+  let filterBy;
+  // console.log(param.category);
 
   const getProducts = async (link) => {
     try {
       let myResponse = await axios.get(link);
       setAllProducts(myResponse?.data);
-      console.log(myResponse.data);
+      // console.log(myResponse.data);
     } catch (error) {
       console.log(error);
     }
   };
-  // const getMenProducts = async () => {
-  //   try {
-  //     let myResponse = await axios.get(
-  //       "https://dummyjson.com/c/3b6e-8285-4ac0-bf6d"
-  //     );
-  //     setAllProducts(myResponse?.data[param.id - 1]);
-  //     console.log(myResponse.data[0].images[0]);
-  //     // setTotalPrice(allProducts.currentPrice);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+
+  const filterProducts = (checkboxValue) => {
+    if (param.category === "men") {
+      if (checkboxValue === "shirts") {
+        getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+      } else if (checkboxValue === "Jackets") {
+        getProducts();
+      } else if (checkboxValue === "hat") {
+        getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
+      } else if (checkboxValue === "shoses") {
+        getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+      }
+    }
+    if (param.category === "woman") {
+      if (checkboxValue === "shirts") {
+        getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
+      } else if (checkboxValue === "Jackets") {
+        getProducts();
+      } else if (checkboxValue === "hat") {
+        getProducts("https://dummyjson.com/c/3e2d-e47d-4a87-86e1");
+      } else if (checkboxValue === "shoses") {
+        getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+      }
+    }
+  };
+
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    setSelectedItem(checked ? value : "");
+    filterProducts(value);
+
+    console.log(value);
+    console.log("selectedItem :", selectedItem);
+  };
 
   useEffect(() => {
     if (param.category === "woman") {
       getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
     } else if (param.category === "men") {
       getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+    } else if (param.category === "shoses") {
+      getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+    } else if (param.category === "children") {
+      getProducts("https://dummyjson.com/c/df38-baf7-4c19-a834");
+    } else if (param.category === "hat") {
+      getProducts("https://dummyjson.com/c/3e2d-e47d-4a87-86e1");
     }
-  }, [param]);
+    setSelectedItem("shirts");
+  }, [param, filterBy]);
 
   return (
     <h2 className="productCategory">
       <div className="container">
         <div className="wrapper">
           <div className="leftSide">
-            <h3>Product Category</h3>
-            <div className="filterItem">
-              <input value={1} id="1" type="checkbox" />
-              <label htmlFor="1">hat</label>
-            </div>
-            <div className="filterItem">
-              <input value={2} id="2" type="checkbox" />
-              <label htmlFor="2">Shoses</label>
-            </div>
-            <div className="filterItem">
-              <input value={3} id="3" type="checkbox" />
-              <label htmlFor="3">t-SHIRT</label>
-            </div>
+            {(param.category === "men" ||
+              param.category === "woman" ||
+              param.category === "children") && (
+              <>
+                <h3>Product Category</h3>
 
+                <div className="filterItem">
+                  <input
+                    value="shirts"
+                    id="t-SHIRT"
+                    type="checkbox"
+                    checked={selectedItem === "shirts"}
+                    onChange={handleCheckboxChange}
+                  />
+                  <label htmlFor="t-SHIRT">T-SHIRT</label>
+                </div>
+
+                <div className="filterItem">
+                  <input
+                    value="Jackets"
+                    id="Jackets"
+                    type="checkbox"
+                    checked={selectedItem === "Jackets"}
+                    onChange={handleCheckboxChange}
+                  />
+                  <label htmlFor="Jackets">Jacket</label>
+                </div>
+
+                <div className="filterItem">
+                  <input
+                    value="hat"
+                    id="hat"
+                    type="checkbox"
+                    checked={selectedItem === "hat"}
+                    onChange={handleCheckboxChange}
+                  />
+                  <label htmlFor="hat">Hat</label>
+                </div>
+
+                <div className="filterItem">
+                  <input
+                    value="shoses"
+                    id="shoses"
+                    type="checkbox"
+                    checked={selectedItem === "shoses"}
+                    onChange={handleCheckboxChange}
+                  />
+                  <label htmlFor="shoses">Shoes</label>
+                </div>
+              </>
+            )}
             <h3>Filter By Price</h3>
             <label htmlFor="">0</label>
             <input
@@ -205,7 +158,12 @@ export const ProductCategory = () => {
             </div>
             <div className="filteredCards">
               {allProducts?.map((item, index) => (
-                <Link to={`/product/${param.category}/${index + 1} `}>
+                <Link
+                  key={index}
+                  to={`/product/${param.category}/${selectedItem}/${
+                    index + 1
+                  } `}
+                >
                   <div key={item.id} className="images">
                     {item.images.length > 1 ? (
                       <>
@@ -218,8 +176,8 @@ export const ProductCategory = () => {
                   </div>
                   <p className="proTitle">{item.title}</p>
                   <div className="price">
-                    <del>$232.2</del>
-                    <p>$2143</p>
+                    <del>{item.oldPrice} EGP</del>
+                    <p>{item.currentPrice} EGP</p>
                   </div>
                 </Link>
               ))}
