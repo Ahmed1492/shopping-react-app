@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Product.scss";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { MyContext } from "../../context/MyContext";
+
 const images = [
   "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 
@@ -17,6 +19,9 @@ export const Product = () => {
   const param = useParams();
 
   const [allProducts, setAllProducts] = useState([]);
+
+  const { setData } = useContext(MyContext);
+  setData(param.type);
 
   const getMenProducts = async () => {
     try {
@@ -65,7 +70,7 @@ export const Product = () => {
       if (param.type === "shirts") {
         getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
       } else if (param.type === "Jackets") {
-        getProducts();
+        getProducts("https://dummyjson.com/c/baef-4d4d-4af1-b815");
       } else if (param.type === "hat") {
         getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
       } else if (param.type === "shoses") {
@@ -76,16 +81,33 @@ export const Product = () => {
       if (param.type === "shirts") {
         getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
       } else if (param.type === "Jackets") {
-        getProducts();
+        getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
       } else if (param.type === "hat") {
         getProducts("https://dummyjson.com/c/3e2d-e47d-4a87-86e1");
       } else if (param.type === "shoses") {
         getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
       }
     }
+    if (param.category === "children") {
+      if (param.type === "shirts") {
+        getProducts("https://dummyjson.com/c/df38-baf7-4c19-a834");
+      } else if (param.type === "Jackets") {
+        getProducts("https://dummyjson.com/c/0256-3a1c-4b10-92ca");
+      } else if (param.type === "hat") {
+        getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
+      } else if (param.type === "shoses") {
+        getProducts("");
+      }
+    }
   }, [param]);
   return (
     <div className="singleProduct">
+      <div className="pagePath">
+        product /
+        <Link > {param.category} </Link> /{" "}
+        <Link to={`/products/${param.category}`}>{param.type}</Link>/{" "}
+        {allProducts.title}
+      </div>
       <div className="container">
         <div className="left">
           <div className="sliderImage">

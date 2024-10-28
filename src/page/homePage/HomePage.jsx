@@ -5,10 +5,12 @@ import { Categories } from "../../component/categories/Categories";
 import { Contact } from "../../component/contact/Contact";
 import { FeaturedData } from "../../component/FeaturedData/FeaturedData";
 import { Cart } from "../../component/cart/Cart";
+import { NavBar } from "../../component/navbar/NavBar";
 
 export const HomePage = () => {
   return (
     <div className="home">
+      <NavBar />
       <HomeSlider />
       <FeaturedData type="featured" />
       <Categories />
