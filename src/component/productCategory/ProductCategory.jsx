@@ -34,7 +34,9 @@ export const ProductCategory = () => {
       } else if (checkboxValue === "hat") {
         getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
       } else if (checkboxValue === "shoses") {
-        getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+        getProducts("https://dummyjson.com/c/1e1b-e1d6-47f8-b526"); // k
+      } else if (checkboxValue === "accessories") {
+        getProducts("https://dummyjson.com/c/931b-922a-4ee3-9c5e");
       }
     }
     if (param.category === "woman") {
@@ -45,7 +47,9 @@ export const ProductCategory = () => {
       } else if (checkboxValue === "hat") {
         getProducts("https://dummyjson.com/c/3e2d-e47d-4a87-86e1");
       } else if (checkboxValue === "shoses") {
-        getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+        getProducts("https://dummyjson.com/c/a939-0caa-4dce-acfd"); //k
+      } else if (checkboxValue === "accessories") {
+        getProducts("https://dummyjson.com/c/0b52-c6b5-4df9-a10a");
       }
     }
     if (param.category === "children") {
@@ -54,9 +58,9 @@ export const ProductCategory = () => {
       } else if (checkboxValue === "Jackets") {
         getProducts("https://dummyjson.com/c/0256-3a1c-4b10-92ca");
       } else if (checkboxValue === "hat") {
-        getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
+        getProducts("https://dummyjson.com/c/2f5d-5618-46da-8ba8");
       } else if (checkboxValue === "shoses") {
-        getProducts("");
+        getProducts("https://dummyjson.com/c/4f2a-8829-4a0e-b6c8");
       }
     }
   };
@@ -82,7 +86,9 @@ export const ProductCategory = () => {
         } else if (selectedItem === "hat") {
           getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
         } else if (selectedItem === "shoses") {
-          getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+          getProducts("https://dummyjson.com/c/1e1b-e1d6-47f8-b526"); // k
+        } else if (selectedItem === "accessories") {
+          getProducts("https://dummyjson.com/c/931b-922a-4ee3-9c5e");
         }
       }
       if (param.category === "woman") {
@@ -93,7 +99,9 @@ export const ProductCategory = () => {
         } else if (selectedItem === "hat") {
           getProducts("https://dummyjson.com/c/3e2d-e47d-4a87-86e1");
         } else if (selectedItem === "shoses") {
-          getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+          getProducts("https://dummyjson.com/c/a939-0caa-4dce-acfd"); //k
+        } else if (selectedItem === "accessories") {
+          getProducts("https://dummyjson.com/c/0b52-c6b5-4df9-a10a");
         }
       }
       if (param.category === "children") {
@@ -102,9 +110,9 @@ export const ProductCategory = () => {
         } else if (selectedItem === "Jackets") {
           getProducts("https://dummyjson.com/c/0256-3a1c-4b10-92ca");
         } else if (selectedItem === "hat") {
-          getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
+          getProducts("https://dummyjson.com/c/2f5d-5618-46da-8ba8");
         } else if (selectedItem === "shoses") {
-          getProducts("");
+          getProducts("https://dummyjson.com/c/4f2a-8829-4a0e-b6c8");
         }
       }
       setSelectedItem((prev) => prev);
@@ -117,7 +125,9 @@ export const ProductCategory = () => {
         } else if (data === "hat") {
           getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
         } else if (data === "shoses") {
-          getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+          getProducts("https://dummyjson.com/c/1e1b-e1d6-47f8-b526"); // k
+        } else if (data === "accessories") {
+          getProducts("https://dummyjson.com/c/931b-922a-4ee3-9c5e");
         }
       }
       if (param.category === "woman") {
@@ -128,7 +138,9 @@ export const ProductCategory = () => {
         } else if (data === "hat") {
           getProducts("https://dummyjson.com/c/3e2d-e47d-4a87-86e1");
         } else if (data === "shoses") {
-          getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+          getProducts("https://dummyjson.com/c/a939-0caa-4dce-acfd"); // k
+        } else if (data === "accessories") {
+          getProducts("https://dummyjson.com/c/0b52-c6b5-4df9-a10a");
         }
       }
       if (param.category === "children") {
@@ -137,14 +149,14 @@ export const ProductCategory = () => {
         } else if (data === "Jackets") {
           getProducts("https://dummyjson.com/c/0256-3a1c-4b10-92ca");
         } else if (data === "hat") {
-          getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
+          getProducts("https://dummyjson.com/c/2f5d-5618-46da-8ba8");
         } else if (data === "shoses") {
-          getProducts("");
+          getProducts("https://dummyjson.com/c/4f2a-8829-4a0e-b6c8");
         }
       }
       setSelectedItem(data);
     }
-  }, [param, filterBy , data]);
+  }, [param, filterBy, data]);
 
   return (
     <>

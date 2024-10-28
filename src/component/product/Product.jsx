@@ -74,7 +74,9 @@ export const Product = () => {
       } else if (param.type === "hat") {
         getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
       } else if (param.type === "shoses") {
-        getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+        getProducts("https://dummyjson.com/c/1e1b-e1d6-47f8-b526");
+      } else if (param.type === "accessories") {
+        getProducts("https://dummyjson.com/c/931b-922a-4ee3-9c5e");
       }
     }
     if (param.category === "woman") {
@@ -85,7 +87,9 @@ export const Product = () => {
       } else if (param.type === "hat") {
         getProducts("https://dummyjson.com/c/3e2d-e47d-4a87-86e1");
       } else if (param.type === "shoses") {
-        getProducts("https://dummyjson.com/c/0409-645d-405e-aacd");
+        getProducts("https://dummyjson.com/c/a939-0caa-4dce-acfd"); //k
+      } else if (param.type === "accessories") {
+        getProducts("https://dummyjson.com/c/0b52-c6b5-4df9-a10a");
       }
     }
     if (param.category === "children") {
@@ -94,17 +98,16 @@ export const Product = () => {
       } else if (param.type === "Jackets") {
         getProducts("https://dummyjson.com/c/0256-3a1c-4b10-92ca");
       } else if (param.type === "hat") {
-        getProducts("https://dummyjson.com/c/b27c-1138-4efd-9e98");
+        getProducts("https://dummyjson.com/c/2f5d-5618-46da-8ba8");
       } else if (param.type === "shoses") {
-        getProducts("");
+        getProducts("https://dummyjson.com/c/4f2a-8829-4a0e-b6c8");
       }
     }
   }, [param]);
   return (
     <div className="singleProduct">
       <div className="pagePath">
-        product /
-        <Link > {param.category} </Link> /{" "}
+        product /<Link> {param.category} </Link> /{" "}
         <Link to={`/products/${param.category}`}>{param.type}</Link>/{" "}
         {allProducts.title}
       </div>

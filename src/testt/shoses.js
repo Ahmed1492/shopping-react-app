@@ -19,7 +19,7 @@ let data = [
   },
   {
     "id": "2",
-    "title": "Girl High Sole Slip On Faux Leather Flat Shoes",
+    "title": " High Sole Slip On Faux Leather Flat Shoes",
     "oldPrice": "1499",
     "currentPrice": "1049",
     "images": [
@@ -51,7 +51,7 @@ let data = [
   },
   {
     "id": "4",
-    "title": "Girl Faux Leather High Sole Sport shoes",
+    "title": " Faux Leather High Sole Sport shoes",
     "oldPrice": "999",
     "currentPrice": "899",
     "images": [
@@ -83,7 +83,7 @@ let data = [
   },
   {
     "id": "6",
-    "title": "Woman High Sole Double Banded Eva Slippers",
+    "title": " High Sole Double Banded Eva Slippers",
     "oldPrice": "799",
     "currentPrice": "400",
     "images": [
@@ -100,7 +100,7 @@ let data = [
   },
   {
     "id": "7",
-    "title": "Girl Faux Leather High Sole Sport shoes",
+    "title": " Faux Leather High Sole Sport shoes",
     "oldPrice": "999",
     "currentPrice": "899",
     "images": [
@@ -132,7 +132,7 @@ let data = [
   },
   {
     "id": "9",
-    "title": "Girl Thick Sole Jean Espadrille Shoes",
+    "title": " Thick Sole Jean Espadrille Shoes",
     "oldPrice": "1999",
     "currentPrice": "1000",
     "images": [
@@ -147,33 +147,10 @@ let data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   },
-  {
-    "id": "10",
-    "title": "Woman Lace-up Flat Heel Sandals",
-    "oldPrice": "1499",
-    "currentPrice": "600",
-    "images": [
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_BN53_01_01.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_GR150_01_01.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_BN53_02_02.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_GR150_02_01.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_BN53_03_02.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_GR150_03_01.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_BN53_04_02.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_GR150_04_01.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_BN53_05_02.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_GR150_05_01.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_BN53_06_02.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_GR150_06_01.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_BN53_07_01.jpg",
-      "https://dfcdn.defacto.com.tr/6/B8500AX_24SM_BN53_08_01.jpg"
-    ],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
-  },
   {
     "id": "11",
-    "title": "Woman High Sole Double Banded Slippers",
+    "title": " High Sole Double Banded Slippers",
     "oldPrice": "999",
     "currentPrice": "699",
     "images": [
@@ -251,7 +228,7 @@ let data = [
   },
   {
     "id": "16",
-    "title": "Girl High Sole Single Strap Eva Slippers",
+    "title": " High Sole Single Strap Eva Slippers",
     "oldPrice": "999",
     "currentPrice": "300",
     "images": [
