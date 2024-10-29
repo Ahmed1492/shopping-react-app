@@ -77,6 +77,8 @@ export const Product = () => {
         getProducts("https://dummyjson.com/c/1e1b-e1d6-47f8-b526");
       } else if (param.type === "accessories") {
         getProducts("https://dummyjson.com/c/931b-922a-4ee3-9c5e");
+      } else if (param.type === "pullover") {
+        getProducts("https://dummyjson.com/c/3fda-ad04-4d58-8ad6");
       }
     }
     if (param.category === "woman") {
@@ -90,6 +92,8 @@ export const Product = () => {
         getProducts("https://dummyjson.com/c/a939-0caa-4dce-acfd"); //k
       } else if (param.type === "accessories") {
         getProducts("https://dummyjson.com/c/0b52-c6b5-4df9-a10a");
+      } else if (param.type === "pullover") {
+        getProducts("https://dummyjson.com/c/510b-02e8-41cf-bb22");
       }
     }
     if (param.category === "children") {
@@ -101,13 +105,27 @@ export const Product = () => {
         getProducts("https://dummyjson.com/c/2f5d-5618-46da-8ba8");
       } else if (param.type === "shoses") {
         getProducts("https://dummyjson.com/c/4f2a-8829-4a0e-b6c8");
+      } else if (param.type === "accessories") {
+        getProducts("https://dummyjson.com/c/3ec2-a926-4b41-9a4e");
       }
+    }
+    if (param.category === "accessories") {
+      getProducts("https://dummyjson.com/c/11b5-d830-4fe4-9ffc");
+    }
+    if (param.category === "newSesson") {
+      getProducts("https://dummyjson.com/c/f5de-ad6c-4768-ab18");
+    }
+    if (param.category === "sale") {
+      getProducts("https://dummyjson.com/c/8b67-a14e-49eb-81d4");
+    }
+    if (param.category === "bags") {
+      getProducts("https://dummyjson.com/c/f6e2-e4aa-461d-b0fd");
     }
   }, [param]);
   return (
     <div className="singleProduct">
       <div className="pagePath">
-        product /<Link> {param.category} </Link> /{" "}
+        product /<Link> {param.category} </Link> /
         <Link to={`/products/${param.category}`}>{param.type}</Link>/{" "}
         {allProducts.title}
       </div>
@@ -115,19 +133,18 @@ export const Product = () => {
         <div className="left">
           <div className="sliderImage">
             <div className="images">
-              {allProducts?.images?.map(
-                (img, index) => (
-                  <img
-                    src={img}
-                    onClick={() => setCurrentImage(index)}
-                    alt=""
-                  />
-                )
-                //  <img src={images[1]} onClick={() => setCurrentImage(1)} alt="" />
-              )}
+              {allProducts?.images?.map((img, index) => (
+                <img
+                  className={index === currentImage ? "selectedSmallImage" : ""}
+                  src={img}
+                  onClick={() => setCurrentImage(index)}
+                  alt=""
+                />
+              ))}
             </div>
             <div className="mainImage">
               <img
+                className={param.category === "accessories" && "imageContain"}
                 src={allProducts.images && allProducts?.images[currentImage]}
                 alt=""
               />

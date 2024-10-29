@@ -38,7 +38,9 @@ export const NavBar = () => {
               </Link>
             </li>
             <li>
-              <Link className="link">Accessory</Link>
+              <Link to="/products/bags" className="link">
+                BAGS
+              </Link>
             </li>
           </ul>
         </div>

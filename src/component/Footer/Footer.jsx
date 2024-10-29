@@ -1,9 +1,9 @@
 import React from "react";
 import "./footer.scss";
 import payment from "../../img/payment.png";
-export const Footer = () => {
+export const Footer = ({ footerRef }) => {
   return (
-    <div className="footer">
+    <div ref={footerRef} className="footer">
       <div className="wrapper">
         <div className="top">
           <div className="item">

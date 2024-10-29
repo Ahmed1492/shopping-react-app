@@ -8,8 +8,8 @@ import { Categories } from "../categories/Categories";
 export const HomeSlider = () => {
   const data = [
     "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://img.freepik.com/free-photo/fashionable-woman-brown-coat-beige-hat-posing_273443-3773.jpg?t=st=1730212872~exp=1730216472~hmac=27b5475967976999d7af64fbc453508390a0d0cd5dfd8a7242fbebd0923adc4b&w=1380",
+    "https://img.freepik.com/free-photo/young-businessman-sitting-street_1157-35756.jpg?t=st=1730212975~exp=1730216575~hmac=6e7f4909d34cfc023f558b1f57d83c80a830ab2c1fb7e31cdb9eea362fe62592&w=1380",
   ];
 
   const [curentSlide, setCurentSlide] = useState(0);

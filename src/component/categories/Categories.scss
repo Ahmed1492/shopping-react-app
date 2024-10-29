@@ -1,4 +1,8 @@
 .categories {
+  .image-filter {
+    filter: brightness(0.8) contrast(1.2) saturate(1.1);
+  }
+
   .container {
     display: flex;
     margin: 100px 0;

@@ -22,7 +22,7 @@ export const Categories = () => {
         <div className="col">
           <div className="row">
             <img
-              src="https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src="https://img.freepik.com/premium-photo/portrait-brunette-woman-hat-glasses-holding-gray-handbag_880763-14276.jpg?ga=GA1.1.78769429.1729888761&semt=ais_hybrid"
               alt=""
             />
             <Link to="/products/sale">sale</Link>
@@ -30,7 +30,9 @@ export const Categories = () => {
 
           <div className="row">
             <img
-              src="https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              className="image-filter"
+              src="https://img.freepik.com/premium-photo/portrait-beautiful-woman-pink-background_118454-27987.jpg?ga=GA1.1.78769429.1729888761&semt=ais_hybrid"
+              // src="https://img.freepik.com/free-photo/parisian-lady-beret-trench-sings-microphone-stylish-brunette-long-skirt-light-autumn-coat-posing-camera_197531-18693.jpg?ga=GA1.1.78769429.1729888761&semt=ais_siglip"
               alt=""
             />
             <Link to="/products/woman">WOMEN</Link>
@@ -40,7 +42,9 @@ export const Categories = () => {
         <div className="col">
           <div className="row">
             <img
-              src="https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              className="image-filter"
+              // src="https://img.freepik.com/premium-photo/business-man-sunglasses-fashion-studio-with-pride-gray-background-as-lawyer-male-person-serious-confidence-career-growth-opportunity-with-style-classy-elegant_590464-470932.jpg?ga=GA1.1.78769429.1729888761&semt=ais_siglip"
+              src="https://img.freepik.com/premium-photo/beautiful-brutal-tanned-hipster-man-black-shirt-hat-glasses_149155-1787.jpg?ga=GA1.1.78769429.1729888761&semt=ais_siglip"
               alt=""
             />
             <Link to="/products/newSesson">NEW SESSON</Link>
@@ -52,7 +56,8 @@ export const Categories = () => {
             <div className="col">
               <div className="row">
                 <img
-                  src="https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  className="image-filter"
+                  src="https://img.freepik.com/premium-photo/business-man-sunglasses-fashion-studio-with-pride-gray-background-as-lawyer-male-person-serious-confidence-career-growth-opportunity-with-style-classy-elegant_590464-470932.jpg?ga=GA1.1.78769429.1729888761&semt=ais_siglip"
                   alt=""
                 />
 
@@ -62,7 +67,8 @@ export const Categories = () => {
             <div className="col">
               <div className="row">
                 <img
-                  src="https://images.pexels.com/photos/2703202/pexels-photo-2703202.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  className="image-filter"
+                  src="https://img.freepik.com/free-photo/parisian-lady-beret-trench-sings-microphone-stylish-brunette-long-skirt-light-autumn-coat-posing-camera_197531-18693.jpg?ga=GA1.1.78769429.1729888761&semt=ais_siglip"
                   alt=""
                 />
                 <Link to="/products/accessories">ACCESSORIES</Link>
@@ -72,10 +78,11 @@ export const Categories = () => {
 
           <div className="row">
             <img
-              src="https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              className="image-filter"
+              src="https://img.freepik.com/premium-photo/young-woman-warm-sweater-with-stylish-bag-color-surface_392895-11052.jpg?ga=GA1.1.78769429.1729888761&semt=ais_siglip"
               alt=""
             />
-            <Link to="/products/shoses">SHOSES</Link>
+            <Link to="/products/bags">BAGS</Link>
           </div>
         </div>
       </div>

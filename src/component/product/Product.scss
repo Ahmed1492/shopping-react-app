@@ -1,4 +1,13 @@
 .singleProduct {
+  .selectedSmallImage {
+    border: 4px solid #2196f3;
+  }
+
+  .imageContain {
+    object-fit: contain !important;
+    border-radius: 6px;
+  }
+
   .pagePath {
     font-size: 20px;
     margin: auto;
