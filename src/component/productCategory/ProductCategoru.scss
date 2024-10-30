@@ -228,6 +228,46 @@
   }
 }
 
+@media screen and (max-width:600px) {
+  .wrapper {
+
+    .filteredCards {
+
+      a {
+
+        p.proTitle {
+          font-size: 17px !important;
+          text-align: center !important;
+        }
+
+        .price {
+          justify-content: center !important;
+
+          p {
+            font-size: 16px !important;
+          }
+
+          del {
+            font-size: 16px !important;
+          }
+        }
+      }
+
+
+      .images {
+        img {
+          width: 16rem !important;
+
+        }
+      }
+    }
+
+
+
+
+  }
+}
+
 @media screen and (max-width:360px) {
   .wrapper {
     display: block !important;
@@ -235,6 +275,33 @@
     .filteredCards {
       margin-right: 35px !important;
 
+      a {
+
+        p.proTitle {
+          font-size: 17px !important;
+          text-align: center !important;
+        }
+
+        .price {
+          justify-content: center !important;
+
+          p {
+            font-size: 16px !important;
+          }
+
+          del {
+            font-size: 16px !important;
+          }
+        }
+      }
+
+
+      .images {
+        img {
+          width: 16rem !important;
+
+        }
+      }
     }
 
     .leftSide {

@@ -40,8 +40,12 @@ export const Footer = ({ footerRef }) => {
         <div className="bottom">
           <div className="left">
             <div className="item">
-              <h2>Lamastore</h2>
-              <p>Copyright symbol: ©</p>
+              <h2>Store</h2>
+              <p>
+                {" "}
+                All Copyright Reserved symbol: © By{" "}
+                <span className="signeture">Ahmed Mohamed</span>
+              </p>
             </div>
           </div>
           <div className="right">

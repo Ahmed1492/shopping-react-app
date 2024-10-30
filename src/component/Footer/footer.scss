@@ -2,6 +2,16 @@
   background-color: #8080800f;
   overflow: hidden;
 
+  .signeture {
+    color: #3F51B5;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-size: 20px;
+    margin-left: 3rem;
+    white-space: nowrap;
+  }
+
   .wrapper {
     padding: 10px 20px;
     margin: auto;
@@ -80,16 +90,7 @@
   }
 }
 
-@media screen and (max-width :710px) {
-  .wrapper {
-    margin: 0 !important;
 
-    .top {
-
-      justify-content: space-around !important;
-    }
-  }
-}
 
 @media screen and (max-width :810px) {
   .wrapper {
@@ -106,6 +107,23 @@
   }
 }
 
+@media screen and (max-width :710px) {
+  .wrapper {
+    margin: 0 !important;
+
+    .signeture {
+      font-size: 15px;
+      margin-left: 1rem !important;
+      text-align: center;
+    }
+
+    .top {
+
+      justify-content: space-around !important;
+    }
+  }
+}
+
 @media screen and (max-width :498px) {
   .wrapper {
 
@@ -115,6 +133,12 @@
       .item {
         text-align: center !important;
       }
+    }
+
+    .signeture {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px !important;
     }
   }
 }
