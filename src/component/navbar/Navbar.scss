@@ -177,9 +177,10 @@
 @media only screen and (max-width: 528px) {
 
   .navbar {
+    margin-right: 18px !important;
 
     ul {
-      justify-content: center !important;
+      justify-content: space-between !important;
       align-items: center;
     }
 
@@ -205,6 +206,7 @@
 @media only screen and (max-width: 344px) {
 
   .navbar {
+    margin-right: 28px !important;
 
     ul {
       justify-content: space-between !important;

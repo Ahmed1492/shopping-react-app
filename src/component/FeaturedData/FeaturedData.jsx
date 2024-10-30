@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { Card } from "../card/Card";
 import "./FeaturedData.scss";
-import axios from "axios";
 export const FeaturedData = ({ type }) => {
   const feturedData = [
     {
@@ -44,26 +42,7 @@ export const FeaturedData = ({ type }) => {
     },
   ];
 
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const fetch = async () => {
-      try {
-        const res = await axios.get(
-          process.env.REACT_APP_API_URL +
-            `/products?populate=*&filters[type][$eq]=${type}`,
-          {
-            headers: {
-              Authorization: "bearer " + process.env.REACT_APP_API_TOKEN,
-            },
-          }
-        );
-        setData(res.data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetch();
-  }, []);
+
   return (
     <div className="featuredData">
       <div className="container">

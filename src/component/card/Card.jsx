@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Card.scss";
 
 export const Card = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <Link to="product/cat/1">

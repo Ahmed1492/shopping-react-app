@@ -216,9 +216,32 @@
       height: auto !important;
     }
 
-    .image {
-      display: none !important;
+    .rightSide {
+
+      .image {
+        margin-left: -9px !important;
+
+      }
 
     }
+
+  }
+}
+
+@media screen and (max-width:360px) {
+  .wrapper {
+    display: block !important;
+
+    .filteredCards {
+      margin-right: 35px !important;
+
+    }
+
+    .leftSide {
+      height: auto !important;
+    }
+
+
+
   }
 }

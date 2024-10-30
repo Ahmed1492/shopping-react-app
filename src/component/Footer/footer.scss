@@ -7,14 +7,7 @@
     margin: auto;
 
 
-    .right {
 
-      margin: auto;
-
-      img {
-        width: 80vw;
-      }
-    }
 
     .itemp {
       width: 21rem;
@@ -94,6 +87,21 @@
     .top {
 
       justify-content: space-around !important;
+    }
+  }
+}
+
+@media screen and (max-width :810px) {
+  .wrapper {
+    margin: 0 !important;
+
+    .right {
+
+      margin: auto;
+
+      img {
+        width: 80vw;
+      }
     }
   }
 }
