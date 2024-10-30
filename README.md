@@ -5,7 +5,7 @@ An eCommerce web application for shopping clothes and accessories, featuring a d
 
 ## Features
  
-- **Product Categories: Separate categories for Men, Women, Children, Accessories, New Season, Sale, accessories , and Bags..
+- Product Categories: Separate categories for Men, Women, Children, Accessories, New Season, Sale, accessories , and Bags..
 - **Filter by type within each category (e.g., jackets, t-shirts, shoes).
 - **Filter by price range using a range slider input for refined results.
 - **Sort products by price to help users find the best deal or premium options.
