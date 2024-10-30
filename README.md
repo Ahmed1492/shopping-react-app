@@ -19,12 +19,12 @@ An eCommerce web application for shopping clothes and accessories, featuring a d
 
 ## Technologies Used
 
-- React.js**: For building the user interface.
-- Sass (SCSS)**: For styling the application.
-- React Router**: For navigation between pages.
+- React.js: For building the user interface.
+- Sass (SCSS): For styling the application.
+- React Router: For navigation between pages.
 - State Management: useContext .
 - API/Data .
-- React Router**: For navigation between pages.
+- React Router: For navigation between pages.
 - 
 
 ## Installation
