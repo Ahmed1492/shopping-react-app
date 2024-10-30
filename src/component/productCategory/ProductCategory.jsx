@@ -6,10 +6,12 @@ import { FilterProducts } from "../../page/filterProducts/FilterProducts";
 import { NavBar } from "../navbar/NavBar";
 import { MyContext } from "../../context/MyContext";
 import { Footer } from "../Footer/Footer";
+import { SortByPrice } from "../sortByPrice/SortByPrice";
 
 export const ProductCategory = () => {
   const [allProducts, setAllProducts] = useState([]);
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [currentPrice, setCurrentPrice] = useState(500);
+  const [isSortByPriceMode, setIsSortByPriceMode] = useState(false);
   const [selectedItem, setSelectedItem] = useState("shirts");
   const filterNavbarRef = useRef(null);
   const footerRef = useRef(null);
@@ -98,6 +100,11 @@ export const ProductCategory = () => {
     }
   };
 
+  const handleSortByPrice = (e) => {
+    setCurrentPrice(e.target.value);
+    setIsSortByPriceMode(true);
+  };
+
   const bgImages = {
     men: "https://images.pexels.com/photos/432059/pexels-photo-432059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     woman:
@@ -114,8 +121,6 @@ export const ProductCategory = () => {
   };
 
   const { data } = useContext(MyContext);
-
-  console.log();
 
   useEffect(() => {
     if (param.category === "accessories") {
@@ -316,14 +321,14 @@ export const ProductCategory = () => {
                   </>
                 )}
                 <h3>Filter By Price</h3>
-                <label htmlFor="">0</label>
+                <label htmlFor="">100</label>
                 <input
-                  min={0}
-                  max={1000}
+                  min={100}
+                  max={2999}
                   type="range"
-                  onChange={(e) => setMaxPrice(e.target.value)}
+                  onChange={handleSortByPrice}
                 />
-                <label htmlFor="">{maxPrice}</label>
+                <label htmlFor="">{currentPrice}</label>
 
                 <h3>Sorted By</h3>
                 <div>
@@ -337,45 +342,65 @@ export const ProductCategory = () => {
               </div>
             </div>
 
-            <div className="rightSide">
-              <div className="image">
-                <img
-                  className="image-filter"
-                  src={bgImages[param.category]}
-                  alt=""
-                />
+            {!isSortByPriceMode ? (
+              <div className="rightSide">
+                <div className="image">
+                  <img
+                    className="image-filter"
+                    src={bgImages[param.category]}
+                    alt=""
+                  />
+                </div>
+                <div className="filteredCards">
+                  {allProducts?.map((item, index) => (
+                    <Link
+                      key={index}
+                      to={`/product/${param.category}/${selectedItem}/${
+                        index + 1
+                      } `}
+                    >
+                      <div key={item.id} className="images">
+                        {item.images.length > 1 ? (
+                          <>
+                            <img
+                              className="img1"
+                              src={item?.images[0]}
+                              alt=""
+                            />
+                            <img
+                              className="img2"
+                              src={item?.images[1]}
+                              alt=""
+                            />
+                            )
+                          </>
+                        ) : (
+                          <img className="img" src={item?.images[0]} alt="" />
+                        )}
+                      </div>
+                      <p className="proTitle">{truncateString(item.title)}</p>
+                      <div className="price">
+                        <del>{item.oldPrice} EGP</del>
+                        <p>{item.currentPrice} EGP</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="filteredCards">
-                {allProducts?.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={`/product/${param.category}/${selectedItem}/${
-                      index + 1
-                    } `}
-                  >
-                    <div key={item.id} className="images">
-                      {item.images.length > 1 ? (
-                        <>
-                          <img className="img1" src={item?.images[0]} alt="" />
-                          <img className="img2" src={item?.images[1]} alt="" />)
-                        </>
-                      ) : (
-                        <img className="img" src={item?.images[0]} alt="" />
-                      )}
-                    </div>
-                    <p className="proTitle">{truncateString(item.title)}</p>
-                    <div className="price">
-                      <del>{item.oldPrice} EGP</del>
-                      <p>{item.currentPrice} EGP</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
+            ) : (
+              <SortByPrice
+                allProducts={allProducts}
+                bgImages={bgImages}
+                param={param}
+                truncateString={truncateString}
+                selectedItem={selectedItem}
+                price={currentPrice}
+              />
+            )}
           </div>
         </div>
       </div>
-      <Footer footerRef={footerRef}  />
+      <Footer footerRef={footerRef} />
     </>
   );
 };
