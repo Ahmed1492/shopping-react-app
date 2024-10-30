@@ -55,7 +55,147 @@
         color: black;
         font-size: 18px;
         font-weight: 400;
+        transform: translate(-50%, -50%);
+
       }
     }
   }
+}
+
+@media only screen and (max-width: 1382px) {
+
+  .col {
+    // flex: 1.1 !important;
+
+  }
+
+}
+
+@media only screen and (max-width: 1172px) {
+
+  .row {
+    // flex: 1.1 !important;
+    // display: block !important;
+  }
+
+  .categories .container .col {
+    // display: block !important;
+  }
+
+  .categories .container .col-l {
+    flex: 1.4 !important;
+  }
+
+}
+
+@media only screen and (max-width: 980px) {
+
+  .categories {
+    .container {
+      display: block !important;
+      height: auto !important;
+
+      a {
+        font-size: 16px !important;
+        padding: 7px 24px !important;
+        ;
+      }
+
+
+    }
+
+    .col-l {
+      // display: block !important;
+      flex-wrap: wrap !important;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: row !important;
+      // width: 20rem !important;
+
+      .row {
+        // width: 20rem !important;
+        flex: auto !important;
+        width: 50%;
+        flex-wrap: wrap !important;
+      }
+    }
+  }
+
+  .row {
+    // flex: 1.1 !important;
+    // display: block !important;
+  }
+
+  .categories .container .col {
+    // display: block !important;
+  }
+
+  .categories .container .col-l {
+    flex: 1.4 !important;
+  }
+
+}
+
+@media only screen and (max-width: 556px) {
+
+  .categories {
+    .container {
+      display: block !important;
+      height: auto !important;
+
+      a {
+        font-size: 16px !important;
+        padding: 7px 24px !important;
+        ;
+      }
+
+
+    }
+
+    .col-l {
+      // display: block !important;
+      flex-wrap: wrap !important;
+
+      .row {
+        .col {
+          // width: 70%;
+          flex: auto !important;
+        }
+        height: auto !important;
+      }
+    }
+
+    .col {
+      display: block !important;
+      flex-direction: row !important;
+      // width: 20rem !important;
+
+      .row {
+        // width: 20rem !important;
+        flex: auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        flex-wrap: wrap !important;
+      }
+    }
+  }
+
+  .row {
+    // flex: 1.1 !important;
+    // display: block !important;
+  }
+
+  .categories .container .col {
+    // display: block !important;
+  }
+
+  .categories .container .col-l {
+    flex: 1.4 !important;
+  }
+
 }

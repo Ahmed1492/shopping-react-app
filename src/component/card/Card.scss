@@ -63,35 +63,50 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
 
+
+@media only screen and (max-width: 750px) {
   .card {
     .images {
       width: 37vw;
       height: 353px;
+    }
 
+    .texts {
+      gap: 4px !important;
+
+      h3 {
+        font-size: 17px !important;
+      }
+
+      .price {
+        del {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
     }
   }
+
 }
 
 @media only screen and (max-width: 656px) {
-
   .card {
     .images {
       width: 16rem;
       height: 353px;
-
     }
   }
 }
 
 @media only screen and (max-width: 578px) {
-
   .card {
     .images {
-      width: 18rem;
+      width: 16rem;
       height: 353px;
-
     }
   }
 }
@@ -99,10 +114,12 @@
 @media only screen and (max-width: 300px) {
 
   .card {
+
+
+
     .images {
       width: 80vw;
       height: 353px;
-
     }
   }
 }
