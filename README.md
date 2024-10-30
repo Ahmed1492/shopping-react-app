@@ -6,10 +6,10 @@ An eCommerce web application for shopping clothes and accessories, featuring a d
 ## Features
  
 - Product Categories: Separate categories for Men, Women, Children, Accessories, New Season, Sale, accessories , and Bags..
-- **Filter by type within each category (e.g., jackets, t-shirts, shoes).
-- **Filter by price range using a range slider input for refined results.
-- **Sort products by price to help users find the best deal or premium options.
-- **Easily add items to the shopping cart, allowing users to review their selected products before purchase.
+- Filter by type within each category (e.g., jackets, t-shirts, shoes).
+- Filter by price range using a range slider input for refined results.
+- Sort products by price to help users find the best deal or premium options.
+- Easily add items to the shopping cart, allowing users to review their selected products before purchase.
 
 
 
@@ -19,12 +19,12 @@ An eCommerce web application for shopping clothes and accessories, featuring a d
 
 ## Technologies Used
 
-- **React.js**: For building the user interface.
-- **Sass (SCSS)**: For styling the application.
-- **React Router**: For navigation between pages.
-- **State Management: useContext .
-- **API/Data .
-- **React Router**: For navigation between pages.
+- React.js**: For building the user interface.
+- Sass (SCSS)**: For styling the application.
+- React Router**: For navigation between pages.
+- State Management: useContext .
+- API/Data .
+- React Router**: For navigation between pages.
 - 
 
 ## Installation
