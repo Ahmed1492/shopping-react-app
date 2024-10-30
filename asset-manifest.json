@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/shopping-react-app/static/css/main.6f3f1579.css",
-    "main.js": "/shopping-react-app/static/js/main.372e415d.js",
+    "main.css": "/shopping-react-app/static/css/main.df032a46.css",
+    "main.js": "/shopping-react-app/static/js/main.de6b8b0a.js",
     "static/media/payment.png": "/shopping-react-app/static/media/payment.c25c303da7570caf63c8.png",
     "index.html": "/shopping-react-app/index.html",
-    "main.6f3f1579.css.map": "/shopping-react-app/static/css/main.6f3f1579.css.map",
-    "main.372e415d.js.map": "/shopping-react-app/static/js/main.372e415d.js.map"
+    "main.df032a46.css.map": "/shopping-react-app/static/css/main.df032a46.css.map",
+    "main.de6b8b0a.js.map": "/shopping-react-app/static/js/main.de6b8b0a.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f3f1579.css",
-    "static/js/main.372e415d.js"
+    "static/css/main.df032a46.css",
+    "static/js/main.de6b8b0a.js"
   ]
 }
