@@ -158,9 +158,59 @@
   }
 }
 
+@media screen and (max-width:1262px) {
+  .container {
+    .wrapper {
+      .rightSide {
+        .filteredCards {
+          gap: 2rem !important;
+
+          a {
+            width: 18rem !important;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1063px) {
+  .container {
+    .wrapper {
+      flex-direction: column;
+
+      .leftSide {
+        position: static !important;
+
+        .allFilters {
+          position: static !important;
+        }
+      }
+
+      .rightSide {
+        .filteredCards {
+          a {
+            width: 18rem !important;
+          }
+
+          .images {
+            height: 24rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width:614px) {
   .wrapper {
     display: block !important;
+
+    .filteredCards {
+      margin-right: 35px !important;
+
+    }
 
     .leftSide {
       height: auto !important;

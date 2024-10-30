@@ -6,6 +6,16 @@
     padding: 10px 20px;
     margin: auto;
 
+
+    .right {
+
+      margin: auto;
+
+      img {
+        width: 80vw;
+      }
+    }
+
     .itemp {
       width: 21rem;
 
@@ -63,5 +73,40 @@
   .wrapper {
     margin: 0 !important;
 
+  }
+}
+
+@media screen and (max-width :1238px) {
+  .wrapper {
+    margin: 0 !important;
+
+    .top {
+      gap: 3rem !important;
+
+    }
+  }
+}
+
+@media screen and (max-width :710px) {
+  .wrapper {
+    margin: 0 !important;
+
+    .top {
+
+      justify-content: space-around !important;
+    }
+  }
+}
+
+@media screen and (max-width :498px) {
+  .wrapper {
+
+    .top {
+
+
+      .item {
+        text-align: center !important;
+      }
+    }
   }
 }

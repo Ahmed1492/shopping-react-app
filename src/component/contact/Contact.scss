@@ -27,20 +27,18 @@
         font-weight: 300;
         border-radius: 3px;
         border: none;
+        min-width: 25vw;
+
       }
 
       button {
-        /* height: 36px; */
-        padding: ba;
         background: #29272d;
         color: #fff;
         margin: 0;
         padding: 0;
         width: 66px;
-        /* padding: 14px 0; */
         height: 40px;
         border: none;
-        position: absolute;
         right: -57px;
         border-radius: 0 5px 5px 0;
         font-size: 14px;
@@ -54,6 +52,81 @@
       .icons {
         display: flex;
         gap: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width :814px) {
+  .contact {
+    .container {
+      padding: 10px 14px !important;
+
+      gap: 1rem !important;
+    }
+  }
+}
+
+@media screen and (max-width :536px) {
+  .contact {
+    .container {
+      padding: 10px 14px !important;
+
+      gap: 1rem !important;
+
+      .center {
+        display: flex;
+
+        input {
+          min-width: 70vw !important;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width :378px) {
+  .contact {
+    .container {
+      padding: 10px 14px !important;
+
+      gap: 1rem !important;
+
+      .center {
+        display: flex;
+
+        input {
+          min-width: 50vw !important;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width :300px) {
+  .contact {
+    .container {
+      padding: 10px 14px !important;
+
+      gap: 1rem !important;
+
+      .center {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+
+        input {
+          min-width: 50vw !important;
+
+        }
+
+        button {
+          width: 8rem !important;
+
+        }
       }
     }
   }
