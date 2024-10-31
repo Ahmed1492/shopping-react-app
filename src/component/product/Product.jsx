@@ -140,9 +140,9 @@ export const Product = () => {
     } else if (param.category === "accessories") {
       getProducts("https://dummyjson.com/c/11b5-d830-4fe4-9ffc");
     } else if (param.category === "newSesson") {
-      getProducts("https://dummyjson.com/c/f5de-ad6c-4768-ab18");
+      getProducts("https://dummyjson.com/c/7494-5008-4b89-9542");
     } else if (param.category === "sale") {
-      getProducts("https://dummyjson.com/c/8b67-a14e-49eb-81d4");
+      getProducts("https://dummyjson.com/c/05ec-cd4d-4d6d-bbda");
     } else if (param.category === "bags") {
       getProducts("https://dummyjson.com/c/f6e2-e4aa-461d-b0fd");
     } else if (param.category === "trending") {

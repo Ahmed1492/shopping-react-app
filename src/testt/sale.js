@@ -1,6 +1,6 @@
 const data = [
   {
-    "id": "9",
+    "id": "1",
     "title": "Relax Fit Shirt Collar Pleated Shirt Jacket",
     "oldPrice": "2499",
     "sale": "true",
@@ -21,7 +21,7 @@ const data = [
 
   },
   {
-    "id": "10",
+    "id": "2",
     "title": "Regular Fit Hooded Zippered Light Jacket",
     "oldPrice": "2499",
     "sale": "true",
@@ -40,7 +40,7 @@ const data = [
 
   },
   {
-    "id": "11",
+    "id": "3",
     "title": "Regular Fit Zipper Closure Pocketed Light Jacket",
     "oldPrice": "2499",
     "sale": "true",
@@ -59,7 +59,7 @@ const data = [
 
   },
   {
-    "id": "12",
+    "id": "4",
     "title": "Relax Fit Lined Puffer Jacket",
     "oldPrice": "3499",
     "sale": "true",
@@ -78,7 +78,7 @@ const data = [
 
   },
   {
-    "id": "13",
+    "id": "5",
     "title": "Regular Fit Polo Neck Half Lining Linen Jacket",
     "oldPrice": "3499",
     "sale": "true",
@@ -99,7 +99,7 @@ const data = [
 
   },
   {
-    "id": "14",
+    "id": "6",
     "title": "DefactoFit Black Waterproof Regular Fit Hooded Jacket",
     "oldPrice": "2999",
     "sale": "true",
@@ -120,7 +120,7 @@ const data = [
 
   },
   {
-    "id": "15",
+    "id": "7",
     "title": "DefactoFit Boy Gray Waterproof Regular Fit Hooded Jacket",
     "oldPrice": "2999",
     "sale": "true",
@@ -140,7 +140,7 @@ const data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   }, {
-    "id": "5",
+    "id": "8",
     "title": "Regular Fit Crew Neck Pullover",
     "oldPrice": "599",
     "sale": "true",
@@ -161,7 +161,7 @@ const data = [
 
   },
   {
-    "id": "6",
+    "id": "9",
     "title": "Regular Fit Crew Neck Basic Pullover",
     "oldPrice": "599",
     "sale": "true",
@@ -178,7 +178,7 @@ const data = [
 
   },
   {
-    "id": "7",
+    "id": "10",
     "title": "Regular Fit Crew Neck Pullover",
     "oldPrice": "499",
     "sale": "true",
@@ -194,7 +194,7 @@ const data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   }, {
-    "id": "8",
+    "id": "11",
     "title": "Oversize Fit Button Closure Basic Blazer Jacket",
     "oldPrice": "2499",
     "sale": "true",
@@ -215,7 +215,7 @@ const data = [
 
   },
   {
-    "id": "9",
+    "id": "12",
     "title": "Regular Fit Polo Neck Cachet Jacket",
     "oldPrice": "2299",
     "sale": "true",
@@ -233,7 +233,7 @@ const data = [
 
   },
   {
-    "id": "10",
+    "id": "13",
     "title": "Oversized Fit Blazer",
     "oldPrice": "3999",
     "sale": "true",
@@ -251,7 +251,7 @@ const data = [
 
   },
   {
-    "id": "11",
+    "id": "14",
     "title": "Taffeta Cashmere Bomber Jacket",
     "oldPrice": "1999",
     "sale": "true",
@@ -268,7 +268,7 @@ const data = [
 
   },
   {
-    "id": "12",
+    "id": "15",
     "title": "Slim Fit Jacket Collar Blazer",
     "oldPrice": "2499",
     "sale": "true",
@@ -285,7 +285,7 @@ const data = [
 
   },
   {
-    "id": "13",
+    "id": "16",
     "title": "Oversize Fit Blazer",
     "oldPrice": "2999",
     "sale": "true",
@@ -302,7 +302,7 @@ const data = [
 
   },
   {
-    "id": "14",
+    "id": "17",
     "title": "Relax Fit Cachet Coat",
     "oldPrice": "2499",
     "sale": "true",
@@ -318,7 +318,7 @@ const data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   }, {
-    "id": "7",
+    "id": "18",
     "title": "High Neck Sweater",
     "oldPrice": "1000.00",
     "sale": "true",
@@ -334,7 +334,7 @@ const data = [
 
   },
   {
-    "id": "8",
+    "id": "19",
     "title": "Round neck pullover In Beige",
     "oldPrice": "699.00 ",
     "sale": "true",
@@ -348,7 +348,7 @@ const data = [
 
   },
   {
-    "id": "9",
+    "id": "20",
     "title": "CrewNeck Sweater In Navy Blue",
     "oldPrice": "699.00 ",
     "sale": "true",
@@ -364,7 +364,7 @@ const data = [
 
   },
   {
-    "id": "10",
+    "id": "21",
     "title": "What Ever Sweater",
     "oldPrice": "699.00 ",
     "sale": "true",
@@ -379,7 +379,7 @@ const data = [
 
   },
   {
-    "id": "11",
+    "id": "22",
     "title": "Striped Waffle Sweater",
     "oldPrice": "888.00",
     "sale": "true",
@@ -394,7 +394,7 @@ const data = [
 
   },
   {
-    "id": "12",
+    "id": "23",
     "title": "Don’t Cross The Line Sweater",
     "oldPrice": "699.00 ",
     "sale": "true",
@@ -410,7 +410,7 @@ const data = [
 
   },
   {
-    "id": "13",
+    "id": "24",
     "title": "Red V-Neck Sweater",
     "oldPrice": "499.00 ",
     "sale": "true",
@@ -425,7 +425,7 @@ const data = [
 
   },
   {
-    "id": "14",
+    "id": "25",
     "title": "V-neck pullover in dark blue",
     "oldPrice": "699.00 ",
     "sale": "true",
@@ -441,7 +441,7 @@ const data = [
 
   },
   {
-    "id": "15",
+    "id": "26",
     "title": "Scottish Flannel In Shades Of Grey",
     "oldPrice": "425.00 ",
     "sale": "true",
@@ -456,7 +456,7 @@ const data = [
 
   },
   {
-    "id": "16",
+    "id": "27",
     "title": "Long Sleeves T-Shirt In Blue",
     "oldPrice": "399.00 ",
     "sale": "true",
@@ -473,7 +473,7 @@ const data = [
 
   },
   {
-    "id": "17",
+    "id": "28",
     "title": "The Comfiest Of Them All Sweatpants",
     "oldPrice": "899.00 ",
     "sale": "true",
@@ -489,7 +489,7 @@ const data = [
 
   },
   {
-    "id": "18",
+    "id": "29",
     "title": "Cozy Pocket Shorts In Orange",
     "oldPrice": "799.00 ",
     "sale": "true",
@@ -504,7 +504,7 @@ const data = [
 
   },
   {
-    "id": "19",
+    "id": "30",
     "title": "Cozy Pocket Shorts In Light Purple",
     "oldPrice": "799.00 ",
     "sale": "true",
@@ -520,7 +520,7 @@ const data = [
 
   },
   {
-    "id": "20",
+    "id": "31",
     "title": "Closed Tank top in orange",
     "oldPrice": "599.00 ",
     "sale": "true",
@@ -537,7 +537,7 @@ const data = [
 
   },
   {
-    "id": "21",
+    "id": "32",
     "title": "CrewNeck Sweater In Burgundy",
     "oldPrice": "600.00",
     "sale": "true",
@@ -553,7 +553,7 @@ const data = [
 
   },
   {
-    "id": "22",
+    "id": "33",
     "title": "Black lining tank top push through the pain",
     "oldPrice": "599.00 ",
     "sale": "true",

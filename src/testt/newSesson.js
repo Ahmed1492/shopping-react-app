@@ -1,6 +1,6 @@
 const data = [
   {
-    "id": "8",
+    "id": "1",
     "title": "Standard Fit Crew Neck Basic Knit Comfortable Pullover",
     "oldPrice": "999",
     "newSesson": "true",
@@ -17,7 +17,7 @@ const data = [
 
   },
   {
-    "id": "9",
+    "id": "2",
     "title": "Slim Fit Half Turtleneck Knitwear Pullover",
     "oldPrice": "799",
     "newSesson": "true",
@@ -33,7 +33,7 @@ const data = [
 
   },
   {
-    "id": "10",
+    "id": "3",
     "title": "Oversize Fit Crew Neck Knitwear Pullover",
     "oldPrice": "799",
     "newSesson": "true",
@@ -49,7 +49,7 @@ const data = [
 
   },
   {
-    "id": "11",
+    "id": "4",
     "title": "Oversize Fit Crew Neck Knitwear Pullover",
     "oldPrice": "999",
     "newSesson": "true",
@@ -63,7 +63,7 @@ const data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   }, {
-    "id": "8",
+    "id": "5",
     "title": "Regular Fit Turtleneck Basic Pulover",
     "oldPrice": "499",
     "newSesson": "true",
@@ -83,7 +83,7 @@ const data = [
 
   },
   {
-    "id": "9",
+    "id": "6",
     "title": "Regular Fit Crew Neck Knitwear Pullover",
     "oldPrice": "599",
     "newSesson": "true",
@@ -100,7 +100,7 @@ const data = [
 
   },
   {
-    "id": "10",
+    "id": "7",
     "title": "Regular Fit Crew Neck Basic Pullover",
     "oldPrice": "599",
     "newSesson": "true",
@@ -116,7 +116,7 @@ const data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   }, {
-    "id": "11",
+    "id": "8",
     "title": "Regular Fit Crew Neck Knit Pullover",
     "oldPrice": "599",
     "newSesson": "true",
@@ -132,7 +132,7 @@ const data = [
 
   },
   {
-    "id": "15",
+    "id": "9",
     "title": "Oversize Fit Jacket Collar Blazer",
     "oldPrice": "2499",
     "newSesson": "true",
@@ -150,7 +150,7 @@ const data = [
 
   },
   {
-    "id": "16",
+    "id": "10",
     "title": "Carrot Fit Super Skinny Hem Zipper Trousers",
     "oldPrice": "1499",
     "newSesson": "true",
@@ -164,7 +164,7 @@ const data = [
 
   },
   {
-    "id": "17",
+    "id": "11",
     "title": "Regular Fit Polo Neck Cachet Jacket",
     "oldPrice": "2499",
     "newSesson": "true",
@@ -183,7 +183,7 @@ const data = [
 
   },
   {
-    "id": "18",
+    "id": "12",
     "title": "Carrot Fit High Waist Skinny Leg Crop Trousers",
     "oldPrice": "1499",
     "newSesson": "true",
@@ -200,7 +200,7 @@ const data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   }, {
-    "id": "16",
+    "id": "13",
     "title": "Regular Fit Zipper Closure Pocketed Light Jacket",
     "oldPrice": "2499",
     "newSesson": "true",
@@ -218,7 +218,7 @@ const data = [
 
   },
   {
-    "id": "17",
+    "id": "14",
     "title": "Relax Fit Shirt Collar Pleated Shirt Jacket",
     "oldPrice": "2499",
     "newSesson": "true",
@@ -239,7 +239,7 @@ const data = [
 
   },
   {
-    "id": "18",
+    "id": "15",
     "title": "Relax Fit Shirt Collar Pleated Shirt Jacket",
     "oldPrice": "2499",
     "newSesson": "true",
@@ -260,7 +260,7 @@ const data = [
 
   },
   {
-    "id": "19",
+    "id": "16",
     "title": "Slim Fit Shirt Collar Taffeta Suede Jacket",
     "oldPrice": "2999",
     "newSesson": "true",
@@ -277,7 +277,7 @@ const data = [
 
   },
   {
-    "id": "20",
+    "id": "17",
     "title": "Relax Fit Lined Puffer Jacket",
     "oldPrice": "3499",
     "newSesson": "true",
@@ -296,4 +296,4 @@ const data = [
   }
 ];
 
-const url = "https://dummyjson.com/c/f5de-ad6c-4768-ab18";
+const url = "https://dummyjson.com/c/7494-5008-4b89-9542";
