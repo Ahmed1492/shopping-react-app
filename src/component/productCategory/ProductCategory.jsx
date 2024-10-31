@@ -430,7 +430,6 @@ export const ProductCategory = () => {
           </div>
         </div>
       </div>
-      <div footerRef={footerRef} />
     </>
   );
 };

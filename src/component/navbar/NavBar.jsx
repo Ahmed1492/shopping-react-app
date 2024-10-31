@@ -5,12 +5,19 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import flag from "../../img/en.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Navbar.scss";
 import { Cart } from "../cart/Cart";
 export const NavBar = () => {
   const [isOppen, setIsOppen] = useState(false);
   // console.log(isOppen);
+
+  let param = useParams();
+  const getCuurentPath = (currentPath) => {
+    if (param?.category?.toLowerCase() === currentPath?.toLowerCase())
+      return "currentLink";
+    return "";
+  };
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -23,22 +30,34 @@ export const NavBar = () => {
               <span>USD</span> <ExpandMoreIcon />
             </li>
             <li>
-              <Link className="link" to="/products/men">
+              <Link
+                className={`link ${getCuurentPath("men")}`}
+                to="/products/men"
+              >
                 Men
               </Link>
             </li>
             <li>
-              <Link className="link" to="/products/woman">
-                Women
+              <Link
+                className={`link ${getCuurentPath("woman")}`}
+                to="/products/woman"
+              >
+                Woman
               </Link>
             </li>
             <li>
-              <Link to="/products/children" className="link">
+              <Link
+                to="/products/children"
+                className={`link ${getCuurentPath("children")}`}
+              >
                 Children
               </Link>
             </li>
             <li>
-              <Link to="/products/bags" className="link">
+              <Link
+                to="/products/bags"
+                className={`link ${getCuurentPath("bags")}`}
+              >
                 BAGS
               </Link>
             </li>
