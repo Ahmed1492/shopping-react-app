@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const SortByPrice = ({
@@ -10,17 +10,28 @@ export const SortByPrice = ({
   price,
   isSortByPriceMode,
 }) => {
-  let sortedProducts;
-  if (isSortByPriceMode === "Price Hiest First") {
-    sortedProducts = allProducts.sort(
-      (a, b) => +b.currentPrice - +a.currentPrice
-    );
-  } else if (isSortByPriceMode === "Price Lowest First") {
-    sortedProducts = allProducts.sort(
-      (a, b) => +a.currentPrice - +b.currentPrice
-    );
-  }
+  const [sortedProducts, setSortedProducts] = useState([]);
+  const parsePrice = (price) => {
+    return +price.trim().replace(/,/g, "");
+  };
 
+  const handleSort = () => {
+    const sorted = [...allProducts];
+    if (isSortByPriceMode === "Price Highest First") {
+      sorted.sort(
+        (a, b) => parsePrice(b.currentPrice) - parsePrice(a.currentPrice)
+      );
+    } else if (isSortByPriceMode === "Price Lowest First") {
+      sorted.sort(
+        (a, b) => parsePrice(a.currentPrice) - parsePrice(b.currentPrice)
+      );
+    }
+
+    setSortedProducts(sorted);
+  };
+  useEffect(() => {
+    handleSort();
+  }, [allProducts, isSortByPriceMode]);
   return (
     <div className="rightSide">
       <div className="image">

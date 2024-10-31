@@ -106,7 +106,7 @@ export const Product = () => {
       }
     } else if (param.category === "woman") {
       if (param.type === "shirts") {
-        getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
+        getProducts("https://dummyjson.com/c/8b35-3dac-40c5-8538");
       } else if (param.type === "Jackets") {
         getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
       } else if (param.type === "hat") {
