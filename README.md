@@ -14,7 +14,7 @@ An eCommerce web application for shopping clothes and accessories, featuring a d
 
 
 ## Live Demo
-
+https://ahmed1492.github.io/shopping-react-app/
 
 
 ## Technologies Used
@@ -22,10 +22,10 @@ An eCommerce web application for shopping clothes and accessories, featuring a d
 - React.js: For building the user interface.
 - Sass (SCSS): For styling the application.
 - React Router: For navigation between pages.
-- State Management: useContext .
+- State Management: useContext  , Redux toolkit .
 - API/Data .
 - React Router: For navigation between pages.
-- 
+
 
 ## Installation
 
