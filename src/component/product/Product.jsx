@@ -14,36 +14,19 @@ export const Product = () => {
   const [price, setPrice] = useState(19.9);
   const [totalPrice, setTotalPrice] = useState(price);
   const [currentImage, setCurrentImage] = useState(0);
-  const [numOfProduct, setNumOfProduct] = useState(1);
+  const [productQuantity, setProductQuantity] = useState(1);
 
   const param = useParams();
-
   const [allProducts, setAllProducts] = useState([]);
-
   const { setData } = useContext(MyContext);
-
   useEffect(() => {
     setData(param.type);
   }, [param.type]);
 
-  const getMenProducts = async () => {
-    try {
-      let myResponse = await axios.get(
-        "https://dummyjson.com/c/3b6e-8285-4ac0-bf6d"
-      );
-      setAllProducts(myResponse?.data[param.id - 1]);
-      // console.log(myResponse.data[0].images[0]);
-      // setTotalPrice(allProducts.currentPrice);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   const getProducts = async (link) => {
     try {
       let myResponse = await axios.get(link);
       setAllProducts(myResponse?.data[param.id - 1]);
-      // console.log(myResponse.data[0].images[0]);
-      // setTotalPrice(allProducts.currentPrice);
     } catch (error) {
       console.log(error);
     }
@@ -54,19 +37,23 @@ export const Product = () => {
     return truncatedNumber;
   }
   const increaseProduct = () => {
-    setNumOfProduct(numOfProduct < 100 ? numOfProduct + 1 : 100);
-    numOfProduct > 0
+    setProductQuantity(productQuantity < 100 ? productQuantity + 1 : 100);
+    productQuantity > 0
       ? setTotalPrice(
-          Math.abs(truncateDecimal(price + price * numOfProduct, 4))
+          Math.abs(truncateDecimal(price + price * productQuantity, 4))
         )
       : totalPrice === price
       ? setTotalPrice(price)
       : setTotalPrice(price);
   };
   const decreaseProduct = () => {
-    setNumOfProduct(numOfProduct > 1 ? numOfProduct - 1 : 1);
-    setTotalPrice(Math.abs(truncateDecimal(price - price * numOfProduct, 4)));
+    setProductQuantity(productQuantity > 1 ? productQuantity - 1 : 1);
+    setTotalPrice(
+      Math.abs(truncateDecimal(price - price * productQuantity, 4))
+    );
   };
+
+  const handleProductQuantity = () => {};
 
   useEffect(() => {
     if (param.category === "men") {
@@ -131,14 +118,24 @@ export const Product = () => {
       getProducts("https://dummyjson.com/c/5295-3a93-495f-84a1");
     }
   }, [param]);
+
   return (
     <div className="singleProduct">
-      <div className="pagePath">
-        product /
-        <Link to={`/products/${param.category}`}> {param.category} </Link> /
-        <Link to={`/products/${param.category}`}>{param.type}</Link>/
-        <p>{allProducts.title}</p>
-      </div>
+      {param.category === "men" ||
+      param.category === "woman" ||
+      param.category === "woman" ? (
+        <div className="pagePath">
+          product /
+          <Link to={`/products/${param.category}`}> {param.category} </Link> /
+          <Link to={`/products/${param.category}`}>{param.type}</Link>/
+          <p>{allProducts.title}</p>
+        </div>
+      ) : (
+        <div className="pagePath">
+          <Link to="/">HomePage</Link> /<Link> {param.category} </Link> /
+          <p>{allProducts.title}</p>
+        </div>
+      )}
       <div className="container">
         <div className="left">
           <div className="sliderImage">
@@ -175,15 +172,13 @@ export const Product = () => {
           </div>
 
           <div className="addToCart">
-            <div className="add">
-              <button onClick={increaseProduct}>+</button>
-              <p>{numOfProduct}</p>
-              <button
-                onChange={() => setTotalPrice(price * numOfProduct)}
-                onClick={decreaseProduct}
-              >
-                -
-              </button>
+            <div className="quantityOfProduct">
+              <p>Quantity: </p>
+              <div className="settingsOfNumber">
+                <button onClick={decreaseProduct}>-</button>
+                <span className="totlaNumberOfProduct">{productQuantity}</span>
+                <button onClick={increaseProduct}>+</button>
+              </div>
             </div>
 
             <button className="addToCart">ADD TO CART</button>

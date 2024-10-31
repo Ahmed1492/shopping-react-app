@@ -237,7 +237,18 @@ export const ProductCategory = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [param, filterBy, data]);
+  }, [param.category, filterBy, data]);
+
+  const checkIsCategoryHasType = () => {
+    if (
+      param.category === "men" ||
+      param.category === "woman" ||
+      param.category === "woman"
+    )
+      return true;
+
+    return false;
+  };
 
   return (
     <>
@@ -395,9 +406,9 @@ export const ProductCategory = () => {
                   {allProducts?.map((item, index) => (
                     <Link
                       key={index}
-                      to={`/product/${param.category}/${selectedItem}/${
-                        index + 1
-                      }`}
+                      to={`/product/${param.category}/${
+                        checkIsCategoryHasType() ? selectedItem : ""
+                      }${index + 1}`}
                     >
                       <div key={item.id} className="images">
                         {item.images.length > 1 ? (
