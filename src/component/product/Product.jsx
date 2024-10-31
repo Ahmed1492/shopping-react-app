@@ -99,7 +99,7 @@ export const Product = () => {
       navigate(`/product/${param.category}/shirts/${param.id}`);
     } else if (param.category === "men") {
       if (param.type === "shirts") {
-        getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+        getProducts("https://dummyjson.com/c/4f8c-21a2-455b-83b4");
       } else if (param.type === "Jackets") {
         getProducts("https://dummyjson.com/c/baef-4d4d-4af1-b815");
       } else if (param.type === "hat") {

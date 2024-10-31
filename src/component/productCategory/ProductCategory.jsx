@@ -40,7 +40,7 @@ export const ProductCategory = () => {
     setIsFilterByPriceMode(false);
     if (param.category === "men") {
       if (checkboxValue === "shirts") {
-        getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+        getProducts("https://dummyjson.com/c/4f8c-21a2-455b-83b4");
       } else if (checkboxValue === "Jackets") {
         getProducts("https://dummyjson.com/c/baef-4d4d-4af1-b815");
       } else if (checkboxValue === "hat") {
@@ -77,6 +77,8 @@ export const ProductCategory = () => {
         getProducts("https://dummyjson.com/c/2f5d-5618-46da-8ba8");
       } else if (checkboxValue === "shoes") {
         getProducts("https://dummyjson.com/c/4f2a-8829-4a0e-b6c8");
+      } else if (checkboxValue === "accessories") {
+        getProducts("https://dummyjson.com/c/3ec2-a926-4b41-9a4e");
       }
     }
   };
@@ -138,7 +140,7 @@ export const ProductCategory = () => {
       setSelectedItem("shirts");
     }
     if (param.category === "men") {
-      getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+      getProducts("https://dummyjson.com/c/4f8c-21a2-455b-83b4");
     }
     if (param.category === "woman") {
       getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
@@ -162,7 +164,7 @@ export const ProductCategory = () => {
     if (data === "") {
       if (param.category === "men") {
         if (selectedItem === "shirts") {
-          getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+          getProducts("https://dummyjson.com/c/4f8c-21a2-455b-83b4");
         } else if (selectedItem === "Jackets") {
           getProducts("https://dummyjson.com/c/baef-4d4d-4af1-b815");
         } else if (selectedItem === "hat") {
@@ -207,7 +209,7 @@ export const ProductCategory = () => {
     } else {
       if (param.category === "men") {
         if (data === "shirts") {
-          getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+          getProducts("https://dummyjson.com/c/4f8c-21a2-455b-83b4");
         } else if (data === "Jackets") {
           getProducts("https://dummyjson.com/c/baef-4d4d-4af1-b815");
         } else if (data === "hat") {
@@ -410,6 +412,7 @@ export const ProductCategory = () => {
                 selectedItem={selectedItem}
                 price={currentPrice}
                 isSortByPriceMode={isSortByPriceMode}
+                setAllProducts={setAllProducts}
               />
             ) : (
               <div className="rightSide">

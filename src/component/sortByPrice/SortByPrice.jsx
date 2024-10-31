@@ -11,27 +11,34 @@ export const SortByPrice = ({
   isSortByPriceMode,
 }) => {
   const [sortedProducts, setSortedProducts] = useState([]);
+
+  // Ensures all price values are parsed consistently to numbers
   const parsePrice = (price) => {
-    return +price.trim().replace(/,/g, "");
+    return parseFloat(price.trim().replace(/,/g, ""));
   };
 
   const handleSort = () => {
-    const sorted = [...allProducts];
-    if (isSortByPriceMode === "Price Highest First") {
-      sorted.sort(
-        (a, b) => parsePrice(b.currentPrice) - parsePrice(a.currentPrice)
-      );
-    } else if (isSortByPriceMode === "Price Lowest First") {
-      sorted.sort(
-        (a, b) => parsePrice(a.currentPrice) - parsePrice(b.currentPrice)
-      );
-    }
+    const sorted = [...allProducts].sort((a, b) => {
+      const priceA = parsePrice(a.currentPrice);
+      const priceB = parsePrice(b.currentPrice);
+
+      // Handle sorting by comparing parsed numeric values
+      if (isSortByPriceMode === "Price Highest First") {
+        return +priceB - +priceA;
+      } else if (isSortByPriceMode === "Price Lowest First") {
+        return priceA - priceB;
+      }
+
+      return 0; // Default case if sort mode is invalid
+    });
 
     setSortedProducts(sorted);
   };
+
   useEffect(() => {
     handleSort();
   }, [allProducts, isSortByPriceMode]);
+
   return (
     <div className="rightSide">
       <div className="image">
