@@ -8,7 +8,7 @@ export const Card = ({ feturedData, type, index }) => {
   // console.log(data);
   return (
     <div>
-      <Link to={`product/${type}/${index + 1}`}>
+      <Link to={`product/${type}/${feturedData.id}`}>
         <div className="card">
           <div className="images">
             <div key={feturedData.id} className="images">
