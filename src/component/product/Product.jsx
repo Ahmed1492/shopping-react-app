@@ -27,7 +27,14 @@ export const Product = () => {
   const getProducts = async (link) => {
     try {
       let myResponse = await axios.get(link);
-      setAllProducts(myResponse?.data[param.id - 1]);
+      const findIndexById = () => {
+        return myResponse?.data?.findIndex(
+          (product) => +product.id === +param.id
+        );
+      };
+      let index = findIndexById();
+      console.log(index);
+      setAllProducts(myResponse.data[index]);
     } catch (error) {
       console.log(error);
     }
@@ -71,7 +78,7 @@ export const Product = () => {
     }
   };
 
-  console.log(param);
+  // console.log(param);
 
   useEffect(() => {
     if (param.type) {

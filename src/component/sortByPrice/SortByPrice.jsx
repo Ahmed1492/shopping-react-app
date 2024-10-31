@@ -41,7 +41,7 @@ export const SortByPrice = ({
         {sortedProducts?.map((item, index) => (
           <Link
             key={index}
-            to={`/product/${param.category}/${selectedItem}/${index + 1}`}
+            to={`/product/${param.category}/${selectedItem}/${item.id}`}
           >
             <div key={item.id} className="images">
               {item.images.length > 1 ? (

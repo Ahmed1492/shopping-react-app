@@ -55,7 +55,7 @@ export const ProductCategory = () => {
     }
     if (param.category === "woman") {
       if (checkboxValue === "shirts") {
-        getProducts("https://dummyjson.com/c/8b35-3dac-40c5-8538");
+        getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
       } else if (checkboxValue === "Jackets") {
         getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
       } else if (checkboxValue === "hat") {
@@ -141,7 +141,7 @@ export const ProductCategory = () => {
       getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
     }
     if (param.category === "woman") {
-      getProducts("https://dummyjson.com/c/8b35-3dac-40c5-8538");
+      getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
     }
     if (param.category === "children") {
       getProducts("https://dummyjson.com/c/df38-baf7-4c19-a834");
@@ -177,7 +177,7 @@ export const ProductCategory = () => {
       }
       if (param.category === "woman") {
         if (selectedItem === "shirts") {
-          getProducts("https://dummyjson.com/c/8b35-3dac-40c5-8538");
+          getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
         } else if (selectedItem === "Jackets") {
           getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
         } else if (selectedItem === "hat") {
@@ -222,7 +222,7 @@ export const ProductCategory = () => {
       }
       if (param.category === "woman") {
         if (data === "shirts") {
-          getProducts("https://dummyjson.com/c/8b35-3dac-40c5-8538");
+          getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
         } else if (data === "Jackets") {
           getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
         } else if (data === "hat") {
@@ -426,7 +426,7 @@ export const ProductCategory = () => {
                       key={index}
                       to={`/product/${param.category}/${
                         checkIsCategoryHasType() ? selectedItem + "/" : ""
-                      }${index + 1}`}
+                      }${+item.id}`}
                     >
                       <div key={item.id} className="images">
                         {item.images.length > 1 ? (
