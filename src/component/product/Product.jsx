@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import "./Product.scss";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { MyContext } from "../../context/MyContext";
 
@@ -55,7 +55,28 @@ export const Product = () => {
 
   const handleProductQuantity = () => {};
 
+  const navigate = useNavigate();
+
+  const handleWrongPath = () => {
+    if (
+      param.category == "accessories" ||
+      param.category == "newSesson" ||
+      param.category == "sale" ||
+      param.category == "bags" ||
+      param.category == "trending" ||
+      param.category == "featured"
+    ) {
+      navigate(`/product/${param.category}/${param.id}`);
+    }
+  };
+
   useEffect(() => {
+    // handleWrongPath();
+    console.log(param);
+
+    if (param.type == "undefined") {
+      navigate(`/product/${param.category}/shirts/${param.id}`);
+    }
     if (param.category === "men") {
       if (param.type === "shirts") {
         getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
@@ -117,13 +138,13 @@ export const Product = () => {
     if (param.category === "featured") {
       getProducts("https://dummyjson.com/c/5295-3a93-495f-84a1");
     }
-  }, [param]);
+  }, [param.category, param.id, param.type]);
 
   return (
     <div className="singleProduct">
       {param.category === "men" ||
       param.category === "woman" ||
-      param.category === "woman" ? (
+      param.category === "children" ? (
         <div className="pagePath">
           product /
           <Link to={`/products/${param.category}`}> {param.category} </Link> /

@@ -23,6 +23,8 @@ export const ProductCategory = () => {
   let filterBy;
   // console.log(param.category);
 
+  console.log("selectedItem :: > ", selectedItem);
+
   const getProducts = async (link) => {
     try {
       let myResponse = await axios.get(link);
@@ -132,6 +134,18 @@ export const ProductCategory = () => {
   };
 
   useEffect(() => {
+    if (selectedItem === "undefined") {
+      setSelectedItem("shirts");
+    }
+    if (param.category === "men") {
+      getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
+    }
+    if (param.category === "woman") {
+      getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
+    }
+    if (param.category === "children") {
+      getProducts("https://dummyjson.com/c/df38-baf7-4c19-a834");
+    }
     if (param.category === "accessories") {
       getProducts("https://dummyjson.com/c/11b5-d830-4fe4-9ffc");
     }
@@ -234,6 +248,9 @@ export const ProductCategory = () => {
       setSelectedItem(data);
     }
     window.addEventListener("scroll", handleScroll);
+
+    selectedItem === "undefined" && setSelectedItem("shirts");
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -243,7 +260,7 @@ export const ProductCategory = () => {
     if (
       param.category === "men" ||
       param.category === "woman" ||
-      param.category === "woman"
+      param.category === "children"
     )
       return true;
 
@@ -407,7 +424,7 @@ export const ProductCategory = () => {
                     <Link
                       key={index}
                       to={`/product/${param.category}/${
-                        checkIsCategoryHasType() ? selectedItem : ""
+                        checkIsCategoryHasType() ? selectedItem + "/" : ""
                       }${index + 1}`}
                     >
                       <div key={item.id} className="images">
