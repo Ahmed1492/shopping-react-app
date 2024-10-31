@@ -83,7 +83,7 @@ export const Product = () => {
     }
     if (param.category === "woman") {
       if (param.type === "shirts") {
-        getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
+        getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
       } else if (param.type === "Jackets") {
         getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
       } else if (param.type === "hat") {
@@ -120,6 +120,12 @@ export const Product = () => {
     }
     if (param.category === "bags") {
       getProducts("https://dummyjson.com/c/f6e2-e4aa-461d-b0fd");
+    }
+    if (param.category === "trending") {
+      getProducts("https://dummyjson.com/c/eef5-3303-460c-8904");
+    }
+    if (param.category === "featured") {
+      getProducts("https://dummyjson.com/c/5295-3a93-495f-84a1");
     }
   }, [param]);
   return (

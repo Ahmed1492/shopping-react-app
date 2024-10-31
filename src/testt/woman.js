@@ -89,17 +89,7 @@ let data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   },
-  {
-    "id": 7,
-    "title": "Floral Printed Satin Dress",
-    "oldPrice": "1,099.00 ",
-    "currentPrice": "594.15 ",
-    "images": [
-      "https://www.dresscodeme.com/wp-content/uploads/2023/02/DR10211MLT-1.jpg", "https://www.dresscodeme.com/wp-content/uploads/2023/02/DR10211MLT-2.jpg", "https://www.dresscodeme.com/wp-content/uploads/2023/02/DR10211MLT-3.jpg", "https://www.dresscodeme.com/wp-content/uploads/2023/02/DR10211MLT-4.jpg", "https://www.dresscodeme.com/wp-content/uploads/2023/02/DR10211MLT-5.jpg", "https://www.dresscodeme.com/wp-content/uploads/2023/02/DR10211MLT-6.jpg"
-    ],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
-  },
   {
     "id": 8,
     "title": "Back to School Oversize Fit Thick Sweatshirt",
@@ -203,17 +193,7 @@ let data = [
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
   },
-  {
-    "id": 15,
-    "title": "Graphic White Cropped Top",
-    "oldPrice": "1,099.00 ",
-    "currentPrice": "299.00 ",
-    "images": [
-      "https://www.dresscodeme.com/wp-content/uploads/2023/03/TOP10262WHT-5.png", "https://www.dresscodeme.com/wp-content/uploads/2023/03/TOP10262WHT-4.png", "https://www.dresscodeme.com/wp-content/uploads/2023/03/TOP10262WHT-1.png", "https://www.dresscodeme.com/wp-content/uploads/2023/03/TOP10262WHT-3.png", "https://www.dresscodeme.com/wp-content/uploads/2023/03/TOP10262WHT-2.png", "https://www.dresscodeme.com/wp-content/uploads/2023/03/TOP10262WHT-6.png"
-    ],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam veritatis neque obcaecati in, eum aspernatur excepturi soluta numquam commodi maiores quas illum! Magni, et? Aut non voluptate magnam numquam voluptatibus."
 
-  },
   {
     "id": 16,
     "title": "Oversize Fit Long Sleeve Sweatshirt",
@@ -321,3 +301,5 @@ let data = [
   }
 
 ];
+
+let url = "https://dummyjson.com/c/3297-b59b-4ea5-acc8";

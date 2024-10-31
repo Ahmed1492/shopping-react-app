@@ -7,11 +7,14 @@ import { NavBar } from "../navbar/NavBar";
 import { MyContext } from "../../context/MyContext";
 import { Footer } from "../Footer/Footer";
 import { SortByPrice } from "../sortByPrice/SortByPrice";
+import { FilterByPrice } from "../filterByPrice/FilterByPrice";
 
 export const ProductCategory = () => {
+  const { data } = useContext(MyContext);
   const [allProducts, setAllProducts] = useState([]);
   const [currentPrice, setCurrentPrice] = useState(500);
-  const [isSortByPriceMode, setIsSortByPriceMode] = useState(false);
+  const [isFilterByPriceMode, setIsFilterByPriceMode] = useState(false);
+  const [isSortByPriceMode, setIsSortByPriceMode] = useState(null);
   const [selectedItem, setSelectedItem] = useState("shirts");
   const filterNavbarRef = useRef(null);
   const footerRef = useRef(null);
@@ -31,6 +34,8 @@ export const ProductCategory = () => {
   };
 
   const filterProducts = (checkboxValue) => {
+    setIsSortByPriceMode(null);
+    setIsFilterByPriceMode(false);
     if (param.category === "men") {
       if (checkboxValue === "shirts") {
         getProducts("https://dummyjson.com/c/3b6e-8285-4ac0-bf6d");
@@ -48,7 +53,7 @@ export const ProductCategory = () => {
     }
     if (param.category === "woman") {
       if (checkboxValue === "shirts") {
-        getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
+        getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
       } else if (checkboxValue === "Jackets") {
         getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
       } else if (checkboxValue === "hat") {
@@ -100,9 +105,15 @@ export const ProductCategory = () => {
     }
   };
 
-  const handleSortByPrice = (e) => {
+  const handleFilterByPrice = (e) => {
     setCurrentPrice(e.target.value);
-    setIsSortByPriceMode(true);
+    setIsFilterByPriceMode(true);
+    setIsSortByPriceMode(null);
+  };
+
+  const handleSortByPrice = (e) => {
+    setIsFilterByPriceMode(false);
+    setIsSortByPriceMode(e.target.value);
   };
 
   const bgImages = {
@@ -115,12 +126,10 @@ export const ProductCategory = () => {
     newSesson:
       "https://images.pexels.com/photos/3875430/pexels-photo-3875430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     bags: "https://images.pexels.com/photos/2977304/pexels-photo-2977304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    sale: "",
+    sale: "https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     accessories:
       "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   };
-
-  const { data } = useContext(MyContext);
 
   useEffect(() => {
     if (param.category === "accessories") {
@@ -154,7 +163,7 @@ export const ProductCategory = () => {
       }
       if (param.category === "woman") {
         if (selectedItem === "shirts") {
-          getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
+          getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
         } else if (selectedItem === "Jackets") {
           getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
         } else if (selectedItem === "hat") {
@@ -198,7 +207,7 @@ export const ProductCategory = () => {
       }
       if (param.category === "woman") {
         if (data === "shirts") {
-          getProducts("https://dummyjson.com/c/5415-fa8b-451f-b250");
+          getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
         } else if (data === "Jackets") {
           getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
         } else if (data === "hat") {
@@ -324,25 +333,56 @@ export const ProductCategory = () => {
                 <label htmlFor="">100</label>
                 <input
                   min={100}
-                  max={2999}
+                  max={4000}
                   type="range"
-                  onChange={handleSortByPrice}
+                  onChange={handleFilterByPrice}
                 />
                 <label htmlFor="">{currentPrice}</label>
 
                 <h3>Sorted By</h3>
                 <div>
-                  <input value="Price Lowest First" name="price" type="radio" />
-                  <label>Price Lowest First</label>
+                  <input
+                    onClick={handleSortByPrice}
+                    value="Price Lowest First"
+                    name="price"
+                    type="radio"
+                    id="low price"
+                  />
+                  <label htmlFor="low price">Price Lowest First</label>
                 </div>
                 <div>
-                  <input value="Price Hiest First" name="price" type="radio" />
-                  <label>Price Hiest First</label>
+                  <input
+                    onClick={handleSortByPrice}
+                    value="Price Hiest First"
+                    name="price"
+                    type="radio"
+                    id="high price"
+                  />
+                  <label htmlFor="high price">Price Hiest First</label>
                 </div>
               </div>
             </div>
 
-            {!isSortByPriceMode ? (
+            {isFilterByPriceMode ? (
+              <FilterByPrice
+                allProducts={allProducts}
+                bgImages={bgImages}
+                param={param}
+                truncateString={truncateString}
+                selectedItem={selectedItem}
+                price={currentPrice}
+              />
+            ) : isSortByPriceMode ? (
+              <SortByPrice
+                allProducts={allProducts}
+                bgImages={bgImages}
+                param={param}
+                truncateString={truncateString}
+                selectedItem={selectedItem}
+                price={currentPrice}
+                isSortByPriceMode={isSortByPriceMode}
+              />
+            ) : (
               <div className="rightSide">
                 <div className="image">
                   <img
@@ -357,7 +397,7 @@ export const ProductCategory = () => {
                       key={index}
                       to={`/product/${param.category}/${selectedItem}/${
                         index + 1
-                      } `}
+                      }`}
                     >
                       <div key={item.id} className="images">
                         {item.images.length > 1 ? (
@@ -372,7 +412,6 @@ export const ProductCategory = () => {
                               src={item?.images[1]}
                               alt=""
                             />
-                            )
                           </>
                         ) : (
                           <img className="img" src={item?.images[0]} alt="" />
@@ -387,20 +426,11 @@ export const ProductCategory = () => {
                   ))}
                 </div>
               </div>
-            ) : (
-              <SortByPrice
-                allProducts={allProducts}
-                bgImages={bgImages}
-                param={param}
-                truncateString={truncateString}
-                selectedItem={selectedItem}
-                price={currentPrice}
-              />
             )}
           </div>
         </div>
       </div>
-      <Footer footerRef={footerRef} />
+      <div footerRef={footerRef} />
     </>
   );
 };

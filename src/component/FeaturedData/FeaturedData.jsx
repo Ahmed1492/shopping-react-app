@@ -1,48 +1,26 @@
+import axios from "axios";
 import { Card } from "../card/Card";
 import "./FeaturedData.scss";
+import { useEffect, useState } from "react";
 export const FeaturedData = ({ type }) => {
-  const feturedData = [
-    {
-      id: 1,
-      img1: "https://images.pexels.com/photos/1254041/pexels-photo-1254041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      img2: "https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "Long Sleave Graphic T-shirt",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 2,
-      img2: "https://images.pexels.com/photos/1759622/pexels-photo-1759622.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      img1: "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Coat",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
+  const [feturedData, setFeturedData] = useState([]);
 
-    {
-      id: 3,
-      img1: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      img2: "https://images.pexels.com/photos/1457983/pexels-photo-1457983.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      title: "skirt",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
+  const getData = async (link) => {
+    try {
+      let myResponse = axios.get(link);
+      setFeturedData((await myResponse).data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    {
-      id: 4,
-      img2: "https://images.pexels.com/photos/2065200/pexels-photo-2065200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      img1: "https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "skirt",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-  ];
-
-
+  useEffect(() => {
+    if (type === "featured") {
+      getData("https://dummyjson.com/c/5295-3a93-495f-84a1");
+    } else if (type === "trending") {
+      getData("https://dummyjson.com/c/eef5-3303-460c-8904");
+    }
+  });
   return (
     <div className="featuredData">
       <div className="container">
@@ -57,8 +35,8 @@ export const FeaturedData = ({ type }) => {
         </div>
       </div>
       <div className="card">
-        {feturedData.map((item) => (
-          <Card key={item.id} data={item} />
+        {feturedData.map((item, index) => (
+          <Card type ={type} key={item.id} index={index} feturedData={item} />
         ))}
       </div>
     </div>
