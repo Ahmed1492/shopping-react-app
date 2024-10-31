@@ -21,7 +21,10 @@ export const Product = () => {
   const [allProducts, setAllProducts] = useState([]);
 
   const { setData } = useContext(MyContext);
-  setData(param.type);
+
+  useEffect(() => {
+    setData(param.type);
+  }, [param.type]);
 
   const getMenProducts = async () => {
     try {
@@ -29,7 +32,7 @@ export const Product = () => {
         "https://dummyjson.com/c/3b6e-8285-4ac0-bf6d"
       );
       setAllProducts(myResponse?.data[param.id - 1]);
-      console.log(myResponse.data[0].images[0]);
+      // console.log(myResponse.data[0].images[0]);
       // setTotalPrice(allProducts.currentPrice);
     } catch (error) {
       console.log(error);
@@ -39,7 +42,7 @@ export const Product = () => {
     try {
       let myResponse = await axios.get(link);
       setAllProducts(myResponse?.data[param.id - 1]);
-      console.log(myResponse.data[0].images[0]);
+      // console.log(myResponse.data[0].images[0]);
       // setTotalPrice(allProducts.currentPrice);
     } catch (error) {
       console.log(error);
@@ -131,9 +134,10 @@ export const Product = () => {
   return (
     <div className="singleProduct">
       <div className="pagePath">
-        product /<Link> {param.category} </Link> /
-        <Link to={`/products/${param.category}`}>{param.type}</Link>/{" "}
-        {allProducts.title}
+        product /
+        <Link to={`/products/${param.category}`}> {param.category} </Link> /
+        <Link to={`/products/${param.category}`}>{param.type}</Link>/
+        <p>{allProducts.title}</p>
       </div>
       <div className="container">
         <div className="left">
@@ -141,6 +145,7 @@ export const Product = () => {
             <div className="images">
               {allProducts?.images?.map((img, index) => (
                 <img
+                  key={index}
                   className={index === currentImage ? "selectedSmallImage" : ""}
                   src={img}
                   onClick={() => setCurrentImage(index)}
@@ -150,7 +155,9 @@ export const Product = () => {
             </div>
             <div className="mainImage">
               <img
-                className={param.category === "accessories" && "imageContain"}
+                className={
+                  param.category === "accessories" ? "imageContain" : ""
+                }
                 src={allProducts.images && allProducts?.images[currentImage]}
                 alt=""
               />
