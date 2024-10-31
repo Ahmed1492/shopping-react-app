@@ -8,6 +8,7 @@ import { About } from './page/about/About';
 import { Contact } from './page/contact/Contact';
 import { Footer } from './component/Footer/Footer';
 import { MyProvider } from './context/MyProvider';
+import { NotFound } from './page/NotFound';
 export default function App() {
   return (
     <div className='app'>
@@ -20,6 +21,8 @@ export default function App() {
             <Route path="/product/:category/:id" element={<Product />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/notfound" element={<NotFound />} />
           </Routes>
         </HashRouter>
       </MyProvider>
