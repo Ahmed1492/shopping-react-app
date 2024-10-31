@@ -167,7 +167,7 @@ export const Product = () => {
         </div>
       ) : (
         <div className="pagePath">
-          <Link to="/">HomePage</Link> /<Link> {param.category} </Link> /
+          <Link to="/">HomePage</Link> /<Link to={`/products/${param.category}`}> {param.category} </Link> /
           <p>{allProducts.title}</p>
         </div>
       )}
