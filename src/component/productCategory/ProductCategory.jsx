@@ -23,7 +23,7 @@ export const ProductCategory = () => {
   let filterBy;
   // console.log(param.category);
 
-  console.log("selectedItem :: > ", selectedItem);
+  // console.log("selectedItem :: > ", selectedItem);
 
   const getProducts = async (link) => {
     try {
@@ -36,6 +36,9 @@ export const ProductCategory = () => {
   };
 
   const filterProducts = (checkboxValue) => {
+    console.log(" checkboxValue ", checkboxValue);
+    setSelectedItem(checkboxValue);
+
     setIsSortByPriceMode(null);
     setIsFilterByPriceMode(false);
     if (param.category === "men") {
@@ -88,7 +91,7 @@ export const ProductCategory = () => {
     setSelectedItem(checked ? value : "");
     filterProducts(value);
 
-    console.log(value);
+    console.log("vvv", value);
     console.log("selectedItem :", selectedItem);
   };
 
@@ -201,6 +204,8 @@ export const ProductCategory = () => {
           getProducts("https://dummyjson.com/c/2f5d-5618-46da-8ba8");
         } else if (selectedItem === "shoes") {
           getProducts("https://dummyjson.com/c/4f2a-8829-4a0e-b6c8");
+        } else if (selectedItem === "accessories") {
+          getProducts("https://dummyjson.com/c/3ec2-a926-4b41-9a4e");
         }
       }
       selectedItem == undefined
