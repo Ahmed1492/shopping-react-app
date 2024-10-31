@@ -25,7 +25,7 @@ An eCommerce web application for shopping clothes and accessories, featuring a d
 - State Management: useContext  , Redux toolkit .
 - API/Data .
 - React Router: For navigation between pages.
-- 
+
 
 ## Installation
 
