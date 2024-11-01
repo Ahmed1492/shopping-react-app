@@ -18,7 +18,6 @@ export default function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/homepage" element={<HomePage />} />
             <Route path="/products/:category" element={<ProductCategory />} />
             <Route path="/products/wishList" element={<WishList />} />
             <Route path="/product/:category/:type/:id" element={<Product />} />
