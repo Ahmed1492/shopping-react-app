@@ -3,6 +3,7 @@ import "./Product.scss";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { MyContext } from "../../context/MyContext";
+import { NavBar } from "../navbar/NavBar";
 
 const images = [
   "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -151,92 +152,99 @@ export const Product = () => {
   }, [param.category, param.id, param.type]);
 
   return (
-    <div className="singleProduct">
-      {param.category === "men" ||
-      param.category === "woman" ||
-      param.category === "children" ? (
-        <div className="pagePath">
-          product /
-          <Link to={`/products/${param.category}`}> {param.category} </Link> /
-          <Link to={`/products/${param.category}`}>{param.type}</Link>/
-          <p>{allProducts.title}</p>
-        </div>
-      ) : (
-        <div className="pagePath">
-          <Link to="/">HomePage</Link> /
-          <Link to={`/products/${param.category}`}> {param.category} </Link> /
-          <p>{allProducts.title}</p>
-        </div>
-      )}
-      <div className="container">
-        <div className="left">
-          <div className="sliderImage">
-            <div className="images">
-              {allProducts?.images?.map((img, index) => (
+    <>
+      <NavBar />
+      <div className="singleProduct">
+        {param.category === "men" ||
+        param.category === "woman" ||
+        param.category === "children" ? (
+          <div className="pagePath">
+            product /
+            <Link to={`/products/${param.category}`}> {param.category} </Link> /
+            <Link to={`/products/${param.category}`}>{param.type}</Link>/
+            <p>{allProducts.title}</p>
+          </div>
+        ) : (
+          <div className="pagePath">
+            <Link to="/">HomePage</Link> /
+            <Link to={`/products/${param.category}`}> {param.category} </Link> /
+            <p>{allProducts.title}</p>
+          </div>
+        )}
+        <div className="container">
+          <div className="left">
+            <div className="sliderImage">
+              <div className="images">
+                {allProducts?.images?.map((img, index) => (
+                  <img
+                    key={index}
+                    className={
+                      index === currentImage ? "selectedSmallImage" : ""
+                    }
+                    src={img}
+                    onClick={() => setCurrentImage(index)}
+                    alt=""
+                  />
+                ))}
+              </div>
+              <div className="mainImage">
                 <img
-                  key={index}
-                  className={index === currentImage ? "selectedSmallImage" : ""}
-                  src={img}
-                  onClick={() => setCurrentImage(index)}
+                  className={
+                    param.category === "accessories" ? "imageContain" : ""
+                  }
+                  src={allProducts.images && allProducts?.images[currentImage]}
                   alt=""
                 />
-              ))}
-            </div>
-            <div className="mainImage">
-              <img
-                className={
-                  param.category === "accessories" ? "imageContain" : ""
-                }
-                src={allProducts.images && allProducts?.images[currentImage]}
-                alt=""
-              />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="right">
-          <div className="details">
-            <h3>{allProducts.title}</h3>
-            <div>
-              <del>Price : {allProducts?.oldPrice} EGP</del>
-              <span>Price :{allProducts?.currentPrice} EGP</span>
+          <div className="right">
+            <div className="details">
+              <h3>{allProducts.title}</h3>
+              <div>
+                <del>Price : {allProducts?.oldPrice} EGP</del>
+                <span>Price :{allProducts?.currentPrice} EGP</span>
+              </div>
+              <p>{allProducts?.description}</p>
             </div>
-            <p>{allProducts?.description}</p>
-          </div>
 
-          <div className="addToCart">
-            <div className="quantityOfProduct">
-              <p>Quantity: </p>
-              <div className="settingsOfNumber">
-                <button onClick={decreaseProduct}>-</button>
-                <span className="totlaNumberOfProduct">{productQuantity}</span>
-                <button onClick={increaseProduct}>+</button>
+            <div className="addToCart">
+              <div className="quantityOfProduct">
+                <p>Quantity: </p>
+                <div className="settingsOfNumber">
+                  <button onClick={decreaseProduct}>-</button>
+                  <span className="totlaNumberOfProduct">
+                    {productQuantity}
+                  </span>
+                  <button onClick={increaseProduct}>+</button>
+                </div>
+              </div>
+
+              <button onClick={handleAddToCart} className="addToCart">
+                ADD TO CART
+              </button>
+
+              <div className="buyLater">
+                <Link> ADD TO WISH LIST </Link>
+                <Link> ADD TO FAVOURITE </Link>
               </div>
             </div>
 
-            <button onClick={handleAddToCart} className="addToCart">
-              ADD TO CART
-            </button>
-
-            <div className="buyLater">
-              <Link> ADD TO WISH LIST </Link>
-              <Link> ADD TO FAVOURITE </Link>
-            </div>
-          </div>
-
-          <div className="description">
-            <div className="top">
-              <p>Vendor : Polo</p>
-              <p>Product Type : T-Shirt</p>
-              <p>Tag : T-Shirt ,Women ,Top</p>
-            </div>
-            <div className="bottom">
-              <span>DESCRIPTION</span>
-              <span>ADDITIONAL INFORMATION</span>
-              <p>FAQ</p>
+            <div className="description">
+              <div className="top">
+                <p>Vendor : Polo</p>
+                <p>Product Type : T-Shirt</p>
+                <p>Tag : T-Shirt ,Women ,Top</p>
+              </div>
+              <div className="bottom">
+                <span>DESCRIPTION</span>
+                <span>ADDITIONAL INFORMATION</span>
+                <p>FAQ</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

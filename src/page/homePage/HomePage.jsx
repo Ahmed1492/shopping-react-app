@@ -9,16 +9,15 @@ import { NavBar } from "../../component/navbar/NavBar";
 import { Footer } from "../../component/Footer/Footer";
 
 export const HomePage = () => {
-  
   return (
     <div className="home">
+      <NavBar />
       <HomeSlider />
       <FeaturedData type="featured" />
       <Categories />
       <FeaturedData type="trending" />
       <Contact />
       <Footer />
-
     </div>
   );
 };

@@ -14,8 +14,12 @@ export const NavBar = () => {
   const [cartQuantity, setCartQuantity] = useState(0);
 
   let param = useParams();
+  console.log(param);
+
   const getCuurentPath = (currentPath) => {
-    if (param?.category?.toLowerCase() === currentPath?.toLowerCase())
+    // console.log("param.category", param.category);
+    // console.log("currentPath", currentPath);
+    if (param?.category?.toLowerCase() == currentPath?.toLowerCase())
       return "currentLink";
     return "";
   };

@@ -86,6 +86,8 @@ export const ProductCategory = () => {
     }
   };
 
+  console.log(param);
+
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
     setSelectedItem(checked ? value : "");
@@ -200,6 +202,7 @@ export const ProductCategory = () => {
           getProducts("https://dummyjson.com/c/510b-02e8-41cf-bb22");
         }
       }
+
       if (param.category === "children") {
         if (selectedItem === "shirts") {
           getProducts("https://dummyjson.com/c/df38-baf7-4c19-a834");
@@ -282,6 +285,7 @@ export const ProductCategory = () => {
 
   return (
     <>
+      <NavBar />
       <div className="productCategory">
         <div className="container">
           <div className="wrapper">
@@ -411,7 +415,7 @@ export const ProductCategory = () => {
                 truncateString={truncateString}
                 selectedItem={selectedItem}
                 price={currentPrice}
-                getDiscountPercentage ={getDiscountPercentage}
+                getDiscountPercentage={getDiscountPercentage}
               />
             ) : isSortByPriceMode ? (
               <SortByPrice

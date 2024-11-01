@@ -15,7 +15,6 @@ export default function App() {
     <div className='app'>
       <MyProvider>
         <HashRouter>
-          <NavBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/products/:category" element={<ProductCategory />} />
