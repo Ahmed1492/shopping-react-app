@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
@@ -11,6 +11,7 @@ import { Cart } from "../cart/Cart";
 export const NavBar = () => {
   const [isOppen, setIsOppen] = useState(false);
   // console.log(isOppen);
+  const [cartQuantity, setCartQuantity] = useState(0);
 
   let param = useParams();
   const getCuurentPath = (currentPath) => {
@@ -18,6 +19,14 @@ export const NavBar = () => {
       return "currentLink";
     return "";
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("cartProduct")) {
+      // setProducts(JSON.parse(localStorage.getItem("cartProduct")))
+      let data = JSON.parse(localStorage?.getItem("cartProduct"));
+      setCartQuantity(data.length);
+    }
+  }, []);
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -73,18 +82,24 @@ export const NavBar = () => {
         <div className="right">
           <ul>
             <li>
-              <Link className="link" to="/">
+              <Link className={`link`} to="/homepage">
                 HomePage
               </Link>
             </li>
             <li>
-              <Link to="/about" className="link">
-                About
+              <Link
+                to="/products/newSesson"
+                className={`link ${getCuurentPath("newSesson")}`}
+              >
+                New Sesson
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="link">
-                Contact
+              <Link
+                to="/products/sale"
+                className={`link ${getCuurentPath("sale")}`}
+              >
+                Sale
               </Link>
             </li>
             <li>
@@ -97,10 +112,12 @@ export const NavBar = () => {
           <div className="icons">
             <SearchIcon />
             <PersonOutlineIcon />
-            <FavoriteBorderIcon />
+            <Link to="/products/wishList">
+              <FavoriteBorderIcon />
+            </Link>
             <div onClick={() => setIsOppen(!isOppen)} className="cartIcone">
               <ShoppingCartIcon />
-              <span>0</span>
+              <span>{cartQuantity}</span>
             </div>
           </div>
         </div>

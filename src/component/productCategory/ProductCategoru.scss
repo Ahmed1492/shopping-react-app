@@ -68,10 +68,45 @@
           gap: 10px;
 
           a {
+            position: relative;
             margin: auto;
             margin-top: 1rem;
             width: 19rem;
             margin-bottom: 25px;
+
+            .newSessonLogo {
+              position: absolute;
+              z-index: 222;
+              left: 10px;
+              top: 10px;
+              background: #d41111;
+              padding: 11px 23px;
+              color: #fff;
+              letter-spacing: 6px;
+              border-radius: 3px;
+
+              p {
+                margin: 0;
+                padding: 0;
+              }
+            }
+
+            .saleLogo {
+              position: absolute;
+              z-index: 222;
+              left: 10px;
+              top: 10px;
+              background: #2196f3;
+              padding: 11px 23px;
+              color: #fff;
+              letter-spacing: 6px;
+              border-radius: 3px;
+
+              p {
+                margin: 0;
+                padding: 0;
+              }
+            }
 
             p.proTitle {
               font-size: 19px;
@@ -87,11 +122,23 @@
               align-items: center;
               margin-top: 3px;
 
+
+              p.discount {
+
+                font-size: 16px;
+                color: #E91E63;
+                letter-spacing: 2px;
+                font-weight: 500;
+                // white-space: nowrap;
+              }
+
+
               p {
                 margin: 0;
                 color: black;
                 font-size: 18px;
                 font-weight: 400;
+                // white-space: nowrap;
 
               }
 
@@ -99,6 +146,8 @@
                 color: rgb(157, 153, 153);
                 font-size: 18px;
                 font-weight: 400;
+                // white-space: nowrap;
+
 
               }
             }

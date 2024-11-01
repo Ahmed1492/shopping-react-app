@@ -32,6 +32,7 @@ export const Card = ({ feturedData, type, index }) => {
           <p>${feturedData.currentPrice}</p>
         </div>
       </div>
+      
     </div>
   );
 };

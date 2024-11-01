@@ -12,7 +12,6 @@ export const HomePage = () => {
   
   return (
     <div className="home">
-      <NavBar />
       <HomeSlider />
       <FeaturedData type="featured" />
       <Categories />

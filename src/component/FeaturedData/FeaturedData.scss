@@ -7,7 +7,7 @@
       flex-wrap: wrap;
       /* padding: 43px 196px; */
       width: 77%;
-      margin: auto; 
+      margin: auto;
       margin-top: 4rem;
       margin-bottom: 4rem;
     }
@@ -22,6 +22,31 @@
       flex: 3;
       color: gray;
       font-size: 17px;
+    }
+  }
+
+  .showAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+
+    button {
+      background-color: transparent;
+      border: 1px solid #766b6b;
+      padding: 11px 22px;
+      cursor: pointer;
+      outline: 0;
+      font-size: 17px;
+      border-radius: 2px;
+      transition: all .7s;
+      letter-spacing: 3px;
+
+      &:hover {
+        background-color: #2196f3;
+        border: 1px solid #fff;
+        color: #fff;
+      }
     }
   }
 

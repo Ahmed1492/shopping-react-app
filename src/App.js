@@ -9,14 +9,18 @@ import { Contact } from './page/contact/Contact';
 import { Footer } from './component/Footer/Footer';
 import { MyProvider } from './context/MyProvider';
 import { NotFound } from './page/NotFound';
+import { WishList } from './component/wishList/WishList';
 export default function App() {
   return (
     <div className='app'>
       <MyProvider>
         <HashRouter>
+          <NavBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/homepage" element={<HomePage />} />
             <Route path="/products/:category" element={<ProductCategory />} />
+            <Route path="/products/wishList" element={<WishList />} />
             <Route path="/product/:category/:type/:id" element={<Product />} />
             <Route path="/product/:category/:id" element={<Product />} />
             <Route path="/about" element={<About />} />

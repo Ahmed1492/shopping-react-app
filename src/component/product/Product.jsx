@@ -16,6 +16,7 @@ export const Product = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [productQuantity, setProductQuantity] = useState(1);
   const { data } = useContext(MyContext);
+  const navigate = useNavigate();
 
   const param = useParams();
   const [allProducts, setAllProducts] = useState([]);
@@ -61,20 +62,15 @@ export const Product = () => {
     );
   };
 
-  const handleProductQuantity = () => {};
-
-  const navigate = useNavigate();
-
-  const handleWrongPath = () => {
-    if (
-      param.category == "accessories" ||
-      param.category == "newSesson" ||
-      param.category == "sale" ||
-      param.category == "bags" ||
-      param.category == "trending" ||
-      param.category == "featured"
-    ) {
-      navigate(`/product/${param.category}/${param.id}`);
+  const handleAddToCart = () => {
+    let data = [];
+    data.push(allProducts);
+    if (!localStorage.getItem("cartProduct")) {
+      localStorage.setItem("cartProduct", JSON.stringify(data));
+    } else {
+      let productsInCart = JSON.parse(localStorage?.getItem("cartProduct"));
+      productsInCart.push(allProducts);
+      localStorage.setItem("cartProduct", JSON.stringify(productsInCart));
     }
   };
 
@@ -113,7 +109,7 @@ export const Product = () => {
       }
     } else if (param.category === "woman") {
       if (param.type === "shirts") {
-        getProducts("https://dummyjson.com/c/8b35-3dac-40c5-8538");
+        getProducts("https://dummyjson.com/c/9245-5cdb-47b5-a951");
       } else if (param.type === "Jackets") {
         getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
       } else if (param.type === "hat") {
@@ -167,7 +163,8 @@ export const Product = () => {
         </div>
       ) : (
         <div className="pagePath">
-          <Link to="/">HomePage</Link> /<Link to={`/products/${param.category}`}> {param.category} </Link> /
+          <Link to="/">HomePage</Link> /
+          <Link to={`/products/${param.category}`}> {param.category} </Link> /
           <p>{allProducts.title}</p>
         </div>
       )}
@@ -216,7 +213,9 @@ export const Product = () => {
               </div>
             </div>
 
-            <button className="addToCart">ADD TO CART</button>
+            <button onClick={handleAddToCart} className="addToCart">
+              ADD TO CART
+            </button>
 
             <div className="buyLater">
               <Link> ADD TO WISH LIST </Link>

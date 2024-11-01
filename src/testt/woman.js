@@ -3,8 +3,8 @@ let data = [
   {
     "id": 1,
     "title": "Shirt Collar Crop Blazer Jacket",
-    "oldPrice": "1,600.00 ",
-    "currentPrice": "1,199.00",
+    "oldPrice": "1600.00 ",
+    "currentPrice": "1199.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/C3832AX_24SM_NV28_01_01.jpg", "https://dfcdn.defacto.com.tr/6/C3832AX_24SM_NV28_02_01.jpg", "https://dfcdn.defacto.com.tr/6/C3832AX_24SM_NV28_03_01.jpg", "https://dfcdn.defacto.com.tr/6/C3832AX_24SM_NV28_04_01.jpg", "https://dfcdn.defacto.com.tr/6/C3832AX_24SM_NV28_05_01.jpg", "https://dfcdn.defacto.com.tr/6/C3832AX_24SM_NV28_06_01.jpg"
     ],
@@ -14,8 +14,8 @@ let data = [
   {
     "id": 2,
     "title": "Oversize Fit Thick Fabric Sweatshirt",
-    "oldPrice": "2,099.00",
-    "currentPrice": "1,549.00",
+    "oldPrice": "2099.00",
+    "currentPrice": "1549.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/C8193AX_24WN_WT32_01_01.jpg",
       "https://dfcdn.defacto.com.tr/6/C8193AX_24WN_WT32_02_01.jpg",
@@ -29,8 +29,8 @@ let data = [
   {
     "id": 3,
     "title": "Regular Fit Zippered Striped Thick Sweatshirt",
-    "oldPrice": "1,399.00 ",
-    "currentPrice": "1,199.00",
+    "oldPrice": "1399.00 ",
+    "currentPrice": "1199.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/A8354AX_24WN_BG734_01_01.jpg",
       "https://dfcdn.defacto.com.tr/6/A8354AX_24WN_BG734_02_01.jpg",
@@ -43,7 +43,7 @@ let data = [
   {
     "id": 4,
     "title": "Back to School Oversize Fit Thick Sweatshirt",
-    "oldPrice": "1,199.00 ",
+    "oldPrice": "1199.00 ",
     "currentPrice": "849.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/Y1346AZ_24WN_NV241_01_01.jpg",
@@ -93,7 +93,7 @@ let data = [
   {
     "id": 8,
     "title": "Back to School Oversize Fit Thick Sweatshirt",
-    "oldPrice": "1,499.00 ",
+    "oldPrice": "1499.00 ",
     "currentPrice": "999.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/Y1346AZ_24WN_BK81_01_01.jpg",
@@ -109,7 +109,7 @@ let data = [
   {
     "id": 9,
     "title": "New Comfort Dress in Black",
-    "oldPrice": "1,199.00 ",
+    "oldPrice": "1199.00 ",
     "currentPrice": "849.00",
     "images": [
       "https://www.dresscodeme.com/wp-content/uploads/2022/01/gall-DR10076BK-1.jpg", "https://www.dresscodeme.com/wp-content/uploads/2022/01/gall-DR10076BK-2.jpg", "https://www.dresscodeme.com/wp-content/uploads/2022/01/gall-DR10076BK-3.jpg", "https://www.dresscodeme.com/wp-content/uploads/2022/01/gall-DR10076BK-4.jpg", "https://www.dresscodeme.com/wp-content/uploads/2022/01/gall-DR10076BK-5.jpg", "https://www.dresscodeme.com/wp-content/uploads/2022/01/gall-DR10076BK-6.jpg"
@@ -120,7 +120,7 @@ let data = [
   {
     "id": 10,
     "title": "Peace Of Mind Set In Black",
-    "oldPrice": "1,299.00 ",
+    "oldPrice": "1299.00 ",
     "currentPrice": "949.00",
     "images": [
       "https://www.dresscodeme.com/wp-content/uploads/2020/07/ST10058BK-gall-1.jpg", "https://www.dresscodeme.com/wp-content/uploads/2020/07/ST10058BK-gall-2.jpg", "https://www.dresscodeme.com/wp-content/uploads/2020/07/ST10058BK-gall-3.jpg"
@@ -147,7 +147,7 @@ let data = [
   {
     "id": 12,
     "title": "Oversize Fit Wool Look Blazer",
-    "oldPrice": "1,199.00",
+    "oldPrice": "1199.00",
     "currentPrice": "849.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/Z4919AZ_23WN_GN780_01_01.jpg",
@@ -164,8 +164,8 @@ let data = [
   {
     "id": 13,
     "title": "Oversize Fit Wide Fit Crew Neck Striped Thick Sweatshirt",
-    "oldPrice": "1,800.00",
-    "currentPrice": "1,199.00",
+    "oldPrice": "1800.00",
+    "currentPrice": "1199.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/B2085AX_24WN_BK81_01_01.jpg",
       "https://dfcdn.defacto.com.tr/6/B2085AX_24WN_BK81_02_01.jpg",
@@ -180,7 +180,7 @@ let data = [
   {
     "id": 14,
     "title": "Oversize Fit Long Sleeve Sweatshirt",
-    "oldPrice": "1,499.00",
+    "oldPrice": "1499.00",
     "currentPrice": "999.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/D7206AX_24WN_ER118_01_01.jpg",
@@ -213,8 +213,8 @@ let data = [
   {
     "id": 17,
     "title": "Relax Fit Cachet Coat",
-    "oldPrice": "1,499.00 ",
-    "currentPrice": "1,249.00",
+    "oldPrice": "1499.00 ",
+    "currentPrice": "1249.00",
     "images": [
       "https://dfcdn.defacto.com.tr/6/A0922AX_24WN_BK27_01_01.jpg",
       "https://dfcdn.defacto.com.tr/6/A0922AX_24WN_BK27_02_01.jpg",
@@ -229,8 +229,8 @@ let data = [
   {
     "id": 18,
     "title": "Relax Fit Cachet Coat",
-    "oldPrice": "1,699.00 ",
-    "currentPrice": "1,146.65",
+    "oldPrice": "1699.00 ",
+    "currentPrice": "1146.65",
     "images": [
       "https://dfcdn.defacto.com.tr/6/A0922AX_24WN_BN67_01_01.jpg",
       "https://dfcdn.defacto.com.tr/6/A0922AX_24WN_BN67_02_01.jpg",
@@ -247,8 +247,8 @@ let data = [
   {
     "id": 19,
     "title": "Taffeta Cachet Bomber Jacket",
-    "oldPrice": "1,849.00 ",
-    "currentPrice": "1,146.65",
+    "oldPrice": "1849.00 ",
+    "currentPrice": "1146.65",
     "images": [
       "https://dfcdn.defacto.com.tr/6/B8726AX_24AU_ER238_01_01.jpg",
       "https://dfcdn.defacto.com.tr/6/B8726AX_24AU_ER238_02_01.jpg",
@@ -303,3 +303,5 @@ let data = [
 ];
 
 let url = "https://dummyjson.com/c/8b35-3dac-40c5-8538";
+
+

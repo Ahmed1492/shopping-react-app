@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./Cart.scss";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 const data = [
@@ -51,14 +52,24 @@ const data = [
 ];
 
 export const Cart = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    if (localStorage.getItem("cartProduct")) {
+      // setProducts(JSON.parse(localStorage.getItem("cartProduct")))
+      setProducts(JSON.parse(localStorage?.getItem("cartProduct")));
+      console.log(JSON.parse(localStorage?.getItem("cartProduct")));
+    }
+  }, []);
+
   return (
     <div className="cart">
       <div className="container">
         <div className="allProducts">
-          {data.map((item) => (
+          {products?.map((item) => (
             <div key={item.id} className="product">
               <div className="productImage">
-                <img src={item.img1} alt="" />
+                <img src={item.images[0]} alt="" />
               </div>
               <div className="productDetails">
                 <div className="description">

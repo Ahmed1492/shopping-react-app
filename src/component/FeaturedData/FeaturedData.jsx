@@ -2,6 +2,7 @@ import axios from "axios";
 import { Card } from "../card/Card";
 import "./FeaturedData.scss";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 export const FeaturedData = ({ type }) => {
   const [feturedData, setFeturedData] = useState([]);
 
@@ -14,6 +15,7 @@ export const FeaturedData = ({ type }) => {
     }
   };
 
+  const navigate = useNavigate();
   useEffect(() => {
     if (type === "featured") {
       getData("https://dummyjson.com/c/5295-3a93-495f-84a1");
@@ -21,6 +23,14 @@ export const FeaturedData = ({ type }) => {
       getData("https://dummyjson.com/c/eef5-3303-460c-8904");
     }
   });
+
+  const handleShowAllProducts = () => {
+    if (type === "featured") {
+      navigate("/products/featured");
+    } else if (type === "trending") {
+      navigate("/products/trending");
+    }
+  };
   return (
     <div className="featuredData">
       <div className="container">
@@ -36,8 +46,11 @@ export const FeaturedData = ({ type }) => {
       </div>
       <div className="card">
         {feturedData.map((item, index) => (
-          <Card type ={type} key={item.id} index={index} feturedData={item} />
+          <Card type={type} key={item.id} index={index} feturedData={item} />
         ))}
+      </div>
+      <div className="showAll">
+        <button onClick={handleShowAllProducts}>Show All</button>
       </div>
     </div>
   );

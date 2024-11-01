@@ -58,7 +58,7 @@ export const ProductCategory = () => {
     }
     if (param.category === "woman") {
       if (checkboxValue === "shirts") {
-        getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
+        getProducts("https://dummyjson.com/c/9245-5cdb-47b5-a951");
       } else if (checkboxValue === "Jackets") {
         getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
       } else if (checkboxValue === "hat") {
@@ -138,6 +138,11 @@ export const ProductCategory = () => {
       "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   };
 
+  function getDiscountPercentage(oldPrice, currentPrice) {
+    const discount = ((+oldPrice - +currentPrice) / oldPrice) * 100;
+    return `save ${Math.round(discount)}% `;
+  }
+
   useEffect(() => {
     if (selectedItem === "undefined") {
       setSelectedItem("shirts");
@@ -146,7 +151,7 @@ export const ProductCategory = () => {
       getProducts("https://dummyjson.com/c/4f8c-21a2-455b-83b4");
     }
     if (param.category === "woman") {
-      getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
+      getProducts("https://dummyjson.com/c/9245-5cdb-47b5-a951");
     }
     if (param.category === "children") {
       getProducts("https://dummyjson.com/c/df38-baf7-4c19-a834");
@@ -182,7 +187,7 @@ export const ProductCategory = () => {
       }
       if (param.category === "woman") {
         if (selectedItem === "shirts") {
-          getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
+          getProducts("https://dummyjson.com/c/9245-5cdb-47b5-a951");
         } else if (selectedItem === "Jackets") {
           getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
         } else if (selectedItem === "hat") {
@@ -229,7 +234,7 @@ export const ProductCategory = () => {
       }
       if (param.category === "woman") {
         if (data === "shirts") {
-          getProducts("https://dummyjson.com/c/3297-b59b-4ea5-acc8");
+          getProducts("https://dummyjson.com/c/9245-5cdb-47b5-a951");
         } else if (data === "Jackets") {
           getProducts("https://dummyjson.com/c/6e51-2973-419b-931d");
         } else if (data === "hat") {
@@ -277,7 +282,6 @@ export const ProductCategory = () => {
 
   return (
     <>
-      <NavBar />
       <div className="productCategory">
         <div className="container">
           <div className="wrapper">
@@ -407,6 +411,7 @@ export const ProductCategory = () => {
                 truncateString={truncateString}
                 selectedItem={selectedItem}
                 price={currentPrice}
+                getDiscountPercentage ={getDiscountPercentage}
               />
             ) : isSortByPriceMode ? (
               <SortByPrice
@@ -418,6 +423,7 @@ export const ProductCategory = () => {
                 price={currentPrice}
                 isSortByPriceMode={isSortByPriceMode}
                 setAllProducts={setAllProducts}
+                getDiscountPercentage={getDiscountPercentage}
               />
             ) : (
               <div className="rightSide">
@@ -436,6 +442,16 @@ export const ProductCategory = () => {
                         checkIsCategoryHasType() ? selectedItem + "/" : ""
                       }${+item.id}`}
                     >
+                      {param.category == "newSesson" && (
+                        <div className="newSessonLogo">
+                          <p>NEW</p>
+                        </div>
+                      )}
+                      {param.category == "sale" && (
+                        <div className="saleLogo">
+                          <p>Sale</p>
+                        </div>
+                      )}
                       <div key={item.id} className="images">
                         {item.images.length > 1 ? (
                           <>
@@ -458,6 +474,12 @@ export const ProductCategory = () => {
                       <div className="price">
                         <del>{item.oldPrice} EGP</del>
                         <p>{item.currentPrice} EGP</p>
+                        <p className="discount">
+                          {getDiscountPercentage(
+                            +item.oldPrice,
+                            +item.currentPrice
+                          )}
+                        </p>
                       </div>
                     </Link>
                   ))}

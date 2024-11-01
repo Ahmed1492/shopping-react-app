@@ -9,6 +9,7 @@ export const SortByPrice = ({
   selectedItem,
   price,
   isSortByPriceMode,
+  getDiscountPercentage,
 }) => {
   const [sortedProducts, setSortedProducts] = useState([]);
 
@@ -50,6 +51,17 @@ export const SortByPrice = ({
             key={index}
             to={`/product/${param.category}/${selectedItem}/${item.id}`}
           >
+            {param.category == "newSesson" && (
+              <div className="newSessonLogo">
+                <p>NEW</p>
+              </div>
+            )}
+
+            {param.category == "sale" && (
+              <div className="saleLogo">
+                <p>Sale</p>
+              </div>
+            )}
             <div key={item.id} className="images">
               {item.images.length > 1 ? (
                 <>
@@ -64,6 +76,9 @@ export const SortByPrice = ({
             <div className="price">
               <del>{item.oldPrice} EGP</del>
               <p>{item.currentPrice} EGP</p>
+              <p className="discount">
+                {getDiscountPercentage(+item.oldPrice, +item.currentPrice)}
+              </p>
             </div>
           </Link>
         ))}
