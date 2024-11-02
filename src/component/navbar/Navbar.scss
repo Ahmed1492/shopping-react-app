@@ -89,8 +89,10 @@
       color: #777;
       flex-wrap: wrap;
 
-      .cartIcone {
+      .cartIcone,
+      .wishListIcone {
         position: relative;
+        cursor: pointer;
 
         span {
           position: absolute;
@@ -106,6 +108,18 @@
           display: flex;
           align-items: center;
           justify-content: center;
+        }
+
+
+      }
+
+      .wishListIcone {
+        color: #777;
+
+        span {
+          left: -8px !important;
+          background-color: #e91e63;
+
         }
       }
     }

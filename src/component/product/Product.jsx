@@ -6,7 +6,9 @@ import { MyContext } from "../../context/MyContext";
 import { NavBar } from "../navbar/NavBar";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
-import { addToWishList } from "../../redux/wishListSlice";
+import { addToWishList, removeFromWishList } from "../../redux/wishListSlice";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const images = [
   "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -39,7 +41,7 @@ export const Product = () => {
         );
       };
       let index = findIndexById();
-      console.log(index);
+      // console.log(index);
       setAllProducts(myResponse.data[index]);
     } catch (error) {
       console.log(error);
@@ -74,23 +76,35 @@ export const Product = () => {
   const wishList = useSelector((state) => state.wishList);
 
   const handleAddToWishList = () => {
-    console.log("Adding to wishlist:", allProducts); // Log to check the structure
-    param.category === "men" ||
-    param.category === "woman" ||
-    param.category === "children"
-      ? dispatch(
-          addToWishList({
-            ...allProducts,
-            category: param.category,
-            type: param.type,
-          })
-        )
-      : dispatch(addToWishList({ ...allProducts, category: param.category }));
-
-    if (localStorage.getItem("wishListItems")) {
-      let dataInLocalStorage = JSON.parse(localStorage.getItem("wishListItems"));
-      dataInLocalStorage.push()
+    if (checkIfItemInWishList()) {
+      dispatch(
+        removeFromWishList({
+          ...allProducts,
+          category: param.category,
+          type: param.type,
+        })
+      );
+    } else {
+      dispatch(
+        addToWishList({
+          ...allProducts,
+          category: param.category,
+          type: param.type,
+        })
+      );
     }
+  };
+
+  const checkIfItemInWishList = () => {
+    let newObj = { ...allProducts };
+    newObj.type = param.type;
+    newObj.category = param.category;
+
+    let result = wishList.products.find(
+      (pro) => pro.id === newObj.id && pro.title === newObj.title
+    );
+    if (result) return true;
+    return false;
   };
 
   useEffect(() => {
@@ -239,13 +253,17 @@ export const Product = () => {
               <button onClick={handleAddToCart} className="addToCart">
                 ADD TO CART
               </button>
-
               <div className="buyLater">
-                <Link onClick={handleAddToWishList}> ADD TO WISH LIST </Link>
-                <Link> ADD TO FAVOURITE </Link>
+                <Link onClick={handleAddToWishList}>
+                  {checkIfItemInWishList() ? (
+                    <FavoriteIcon className="wishIcone" />
+                  ) : (
+                    <FavoriteBorderIcon className="wishIcone" />
+                  )}
+                </Link>
+                <Link onClick={checkIfItemInWishList}> ADD TO FAVOURITE </Link>
               </div>
             </div>
-
             <div className="description">
               <div className="top">
                 <p>Vendor : Polo</p>

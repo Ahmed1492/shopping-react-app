@@ -17,6 +17,7 @@ export const NavBar = () => {
   let param = useParams();
   // console.log(param);
   const cartItems = useSelector((state) => state.cart);
+  const wishList = useSelector((state) => state.wishList);
 
   const getCuurentPath = (currentPath) => {
     // console.log("param.category", param.category);
@@ -114,8 +115,9 @@ export const NavBar = () => {
           <div className="icons">
             <SearchIcon />
             <PersonOutlineIcon />
-            <Link to="/products/wishList">
+            <Link className="wishListIcone" to="/products/wishList">
               <FavoriteBorderIcon />
+              <span>{wishList.products.length}</span>
             </Link>
             <div onClick={() => setIsOppen(!isOppen)} className="cartIcone">
               <ShoppingCartIcon />
