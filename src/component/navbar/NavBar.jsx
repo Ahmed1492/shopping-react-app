@@ -8,13 +8,15 @@ import flag from "../../img/en.png";
 import { Link, useParams } from "react-router-dom";
 import "./Navbar.scss";
 import { Cart } from "../cart/Cart";
+import { useSelector } from "react-redux";
 export const NavBar = () => {
   const [isOppen, setIsOppen] = useState(false);
   // console.log(isOppen);
   const [cartQuantity, setCartQuantity] = useState(0);
 
   let param = useParams();
-  console.log(param);
+  // console.log(param);
+  const cartItems = useSelector((state) => state.cart);
 
   const getCuurentPath = (currentPath) => {
     // console.log("param.category", param.category);
@@ -25,11 +27,7 @@ export const NavBar = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("cartProduct")) {
-      // setProducts(JSON.parse(localStorage.getItem("cartProduct")))
-      let data = JSON.parse(localStorage?.getItem("cartProduct"));
-      setCartQuantity(data.length);
-    }
+    setCartQuantity();
   }, []);
   return (
     <div className="navbar">
@@ -121,7 +119,7 @@ export const NavBar = () => {
             </Link>
             <div onClick={() => setIsOppen(!isOppen)} className="cartIcone">
               <ShoppingCartIcon />
-              <span>{cartQuantity}</span>
+              <span>{cartItems.products.length}</span>
             </div>
           </div>
         </div>

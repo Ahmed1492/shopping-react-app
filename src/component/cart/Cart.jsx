@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Cart.scss";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart, reset } from "../../redux/cartSlice";
 const data = [
   {
     id: 1,
@@ -53,21 +55,30 @@ const data = [
 
 export const Cart = () => {
   const [products, setProducts] = useState([]);
+  const cartItems = useSelector((state) => state.cart);
+  console.log("REDUDX", cartItems);
 
   useEffect(() => {
     if (localStorage.getItem("cartProduct")) {
       // setProducts(JSON.parse(localStorage.getItem("cartProduct")))
       setProducts(JSON.parse(localStorage?.getItem("cartProduct")));
-      console.log(JSON.parse(localStorage?.getItem("cartProduct")));
+      // console.log(JSON.parse(localStorage?.getItem("cartProduct")));
     }
   }, []);
 
+  const dispatch = useDispatch();
+  const handleReset = () => {
+    dispatch(reset());
+  };
+  const handleRemoveItem = (item) => {
+    dispatch(removeFromCart(item));
+  };
   return (
     <div className="cart">
       <div className="container">
         <div className="allProducts">
-          {products?.map((item) => (
-            <div key={item.id} className="product">
+          {cartItems.products?.map((item, index) => (
+            <div key={index} className="product">
               <div className="productImage">
                 <img src={item.images[0]} alt="" />
               </div>
@@ -75,9 +86,11 @@ export const Cart = () => {
                 <div className="description">
                   <p>{item.title}</p>
                   <p>{item.title}</p>
-                  <span>1 x ${item.price}</span>
+                  <span>
+                    {item.productQuantity} x {item.currentPrice} EGP
+                  </span>
                 </div>
-                <div className="delete">
+                <div onClick={() => handleRemoveItem(item)} className="delete">
                   <DeleteOutlineIcon />
                 </div>
               </div>
@@ -85,13 +98,13 @@ export const Cart = () => {
           ))}
           <div className="total">
             <h4>SUBTOTAL</h4>
-            <p>$123</p>
+            item<p>{cartItems.totalPrice} EGP </p>
           </div>
 
           <div className="checkOut">
             <button>PROCESSED TO CHECKOUT</button>
           </div>
-          <div className="reset">
+          <div onClick={handleReset} className="reset">
             <p>RESET THE CART</p>
           </div>
         </div>

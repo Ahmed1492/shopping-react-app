@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import "./Product.scss";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import axios, { all } from "axios";
 import { MyContext } from "../../context/MyContext";
 import { NavBar } from "../navbar/NavBar";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
+import { addToWishList } from "../../redux/wishListSlice";
 
 const images = [
   "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -13,7 +16,7 @@ const images = [
 
 export const Product = () => {
   const [price, setPrice] = useState(19.9);
-  const [totalPrice, setTotalPrice] = useState(price);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
   const [productQuantity, setProductQuantity] = useState(1);
   const { data } = useContext(MyContext);
@@ -22,6 +25,7 @@ export const Product = () => {
   const param = useParams();
   const [allProducts, setAllProducts] = useState([]);
   const { setData } = useContext(MyContext);
+
   useEffect(() => {
     setData(param.type);
   }, [param.type]);
@@ -63,19 +67,31 @@ export const Product = () => {
     );
   };
 
+  const dispatch = useDispatch();
   const handleAddToCart = () => {
-    let data = [];
-    data.push(allProducts);
-    if (!localStorage.getItem("cartProduct")) {
-      localStorage.setItem("cartProduct", JSON.stringify(data));
-    } else {
-      let productsInCart = JSON.parse(localStorage?.getItem("cartProduct"));
-      productsInCart.push(allProducts);
-      localStorage.setItem("cartProduct", JSON.stringify(productsInCart));
+    dispatch(addToCart({ ...allProducts, productQuantity, totalPrice }));
+  };
+  const wishList = useSelector((state) => state.wishList);
+
+  const handleAddToWishList = () => {
+    console.log("Adding to wishlist:", allProducts); // Log to check the structure
+    param.category === "men" ||
+    param.category === "woman" ||
+    param.category === "children"
+      ? dispatch(
+          addToWishList({
+            ...allProducts,
+            category: param.category,
+            type: param.type,
+          })
+        )
+      : dispatch(addToWishList({ ...allProducts, category: param.category }));
+
+    if (localStorage.getItem("wishListItems")) {
+      let dataInLocalStorage = JSON.parse(localStorage.getItem("wishListItems"));
+      dataInLocalStorage.push()
     }
   };
-
-  // console.log(param);
 
   useEffect(() => {
     if (param.type) {
@@ -225,7 +241,7 @@ export const Product = () => {
               </button>
 
               <div className="buyLater">
-                <Link> ADD TO WISH LIST </Link>
+                <Link onClick={handleAddToWishList}> ADD TO WISH LIST </Link>
                 <Link> ADD TO FAVOURITE </Link>
               </div>
             </div>
