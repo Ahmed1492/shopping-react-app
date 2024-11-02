@@ -96,13 +96,21 @@ export const Product = () => {
   };
 
   const checkIfItemInWishList = () => {
+
     let newObj = { ...allProducts };
     newObj.type = param.type;
     newObj.category = param.category;
 
     let result = wishList.products.find(
-      (pro) => pro.id === newObj.id && pro.title === newObj.title
+      (pro) =>
+        pro.id === newObj.id &&
+        pro.title === newObj.title &&
+        pro.type === newObj.type &&
+        pro.category === newObj.category
     );
+    console.log("result",result);
+    console.log("newObj",newObj);
+    
     if (result) return true;
     return false;
   };
