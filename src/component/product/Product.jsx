@@ -96,21 +96,35 @@ export const Product = () => {
   };
 
   const checkIfItemInWishList = () => {
-
     let newObj = { ...allProducts };
     newObj.type = param.type;
     newObj.category = param.category;
+    let result;
+    if (
+      param.category === "men" ||
+      param.category === "woman" ||
+      param.category === "children"
+    ) {
+      result = wishList.products.find(
+        (pro) =>
+          pro.id === newObj.id &&
+          pro.title === newObj.title &&
+          pro.type === newObj.type &&
+          pro.category === newObj.category
+      );
+      console.log("result with  type", result);
+      console.log("result with  type", newObj);
+    } else {
+      result = wishList.products.find(
+        (pro) =>
+          pro.id === newObj.id &&
+          pro.title === newObj.title &&
+          pro.category === newObj.category
+      );
+      console.log("result with no type", result);
+      console.log("result with no type", newObj);
+    }
 
-    let result = wishList.products.find(
-      (pro) =>
-        pro.id === newObj.id &&
-        pro.title === newObj.title &&
-        pro.type === newObj.type &&
-        pro.category === newObj.category
-    );
-    console.log("result",result);
-    console.log("newObj",newObj);
-    
     if (result) return true;
     return false;
   };

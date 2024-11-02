@@ -21,8 +21,9 @@ export const wishListSlice = createSlice({
         (product) =>
           product.id !== deletedProduct.id ||
           product.title !== deletedProduct.title ||
-          product.category !== deletedProduct.category 
-          
+          product.category !== deletedProduct.category ||
+          JSON.stringify(product.images) !== JSON.stringify(deletedProduct.images)
+
       );
     }
   },
