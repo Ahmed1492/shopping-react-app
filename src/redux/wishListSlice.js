@@ -22,7 +22,7 @@ export const wishListSlice = createSlice({
           product.id !== deletedProduct.id ||
           product.title !== deletedProduct.title ||
           product.category !== deletedProduct.category ||
-          product.type !== deletedProduct.type
+          
       );
     }
   },
