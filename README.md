@@ -22,9 +22,10 @@ https://ahmed1492.github.io/shopping-react-app/
 - React.js: For building the user interface.
 - Sass (SCSS): For styling the application.
 - React Router: For navigation between pages.
-- State Management: useContext  , Redux toolkit .
+- State Management: useContext  , Redux toolkit  , redux-persist.
 - API/Data .
 - React Router: For navigation between pages.
+-  Material UI 
 
 
 ## Installation
