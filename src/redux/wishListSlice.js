@@ -21,7 +21,7 @@ export const wishListSlice = createSlice({
         (product) =>
           product.id !== deletedProduct.id ||
           product.title !== deletedProduct.title ||
-          product.category !== deletedProduct.category ||
+          product.category !== deletedProduct.category 
           
       );
     }
