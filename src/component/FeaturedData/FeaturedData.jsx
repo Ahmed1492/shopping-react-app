@@ -24,13 +24,6 @@ export const FeaturedData = ({ type }) => {
     }
   });
 
-  const handleShowAllProducts = () => {
-    if (type === "featured") {
-      navigate("/products/featured");
-    } else if (type === "trending") {
-      navigate("/products/trending");
-    }
-  };
   return (
     <div className="featuredData">
       <div className="container">
@@ -49,9 +42,7 @@ export const FeaturedData = ({ type }) => {
           <Card type={type} key={item.id} index={index} feturedData={item} />
         ))}
       </div>
-      <div className="showAll">
-        <button onClick={handleShowAllProducts}>Show All</button>
-      </div>
+
     </div>
   );
 };

@@ -22,6 +22,7 @@ export default function App() {
             <Route path="/product/:category/:type/:id" element={<Product />} />
             <Route path="/product/:category/:id" element={<Product />} />
             <Route path="/about" element={<About />} />
+            {/* <Route path="/login" element={<Login />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/notfound" element={<NotFound />} />

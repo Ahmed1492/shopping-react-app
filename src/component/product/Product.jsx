@@ -144,6 +144,8 @@ export const Product = () => {
       }
     }
 
+    console.log(param);
+
     if (param.type === "undefined") {
       navigate(`/product/${param.category}/shirts/${param.id}`);
     } else if (param.category === "men") {
@@ -198,6 +200,8 @@ export const Product = () => {
       getProducts("https://dummyjson.com/c/eef5-3303-460c-8904");
     } else if (param.category === "featured") {
       getProducts("https://dummyjson.com/c/5295-3a93-495f-84a1");
+    } else if (param.category === "trending") {
+      getProducts("https://dummyjson.com/c/81f9-5dd6-4bf1-b477");
     } else {
       navigate("/notfound");
     }

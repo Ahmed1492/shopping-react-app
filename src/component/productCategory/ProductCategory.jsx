@@ -170,7 +170,6 @@ export const ProductCategory = () => {
     if (param.category === "bags") {
       getProducts("https://dummyjson.com/c/f6e2-e4aa-461d-b0fd");
     }
-
     if (data === "") {
       if (param.category === "men") {
         if (selectedItem === "shirts") {
