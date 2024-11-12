@@ -31,13 +31,18 @@ export const Product = () => {
   const getProducts = async (link) => {
     try {
       let myResponse = await axios.get(link);
+
       const findIndexById = () => {
         return myResponse?.data?.findIndex(
           (product) => +product.id === +param.id
         );
       };
-      let index = findIndexById();
-      // console.log(index);
+      let index;
+      if (findIndexById() !== -1) {
+        index = findIndexById();
+      } else {
+        navigate("/notfound");
+      }
       setAllProducts(myResponse.data[index]);
     } catch (error) {
       console.log(error);
