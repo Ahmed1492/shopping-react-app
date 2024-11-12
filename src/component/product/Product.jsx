@@ -21,16 +21,12 @@ export const Product = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
   const [productQuantity, setProductQuantity] = useState(1);
-  const { data } = useContext(MyContext);
+  const { data, setData } = useContext(MyContext);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const param = useParams();
   const [allProducts, setAllProducts] = useState([]);
-  const { setData } = useContext(MyContext);
-
-  useEffect(() => {
-    setData(param.type);
-  }, [param.type]);
+  const wishList = useSelector((state) => state.wishList); // get data using redux
 
   const getProducts = async (link) => {
     try {
@@ -47,11 +43,10 @@ export const Product = () => {
       console.log(error);
     }
   };
-
-  function truncateDecimal(number, decimalPlaces) {
+  const truncateDecimal = (number, decimalPlaces) => {
     const truncatedNumber = parseFloat(number.toFixed(decimalPlaces));
     return truncatedNumber;
-  }
+  };
   const increaseProduct = () => {
     setProductQuantity(productQuantity < 100 ? productQuantity + 1 : 100);
     productQuantity > 0
@@ -69,11 +64,39 @@ export const Product = () => {
     );
   };
 
-  const dispatch = useDispatch();
+  const checkIfItemInWishList = () => {
+    let newObj = { ...allProducts };
+    newObj.type = param.type;
+    newObj.category = param.category;
+    let result;
+    if (
+      param.category === "men" ||
+      param.category === "woman" ||
+      param.category === "children"
+    ) {
+      result = wishList.products.find(
+        (pro) =>
+          pro.id === newObj.id &&
+          pro.title === newObj.title &&
+          pro.type === newObj.type &&
+          pro.category === newObj.category
+      );
+    } else {
+      result = wishList.products.find(
+        (pro) =>
+          pro.id === newObj.id &&
+          pro.title === newObj.title &&
+          pro.category === newObj.category
+      );
+    }
+
+    if (result) return true;
+    return false;
+  };
+
   const handleAddToCart = () => {
     dispatch(addToCart({ ...allProducts, productQuantity, totalPrice }));
   };
-  const wishList = useSelector((state) => state.wishList);
 
   const handleAddToWishList = () => {
     if (checkIfItemInWishList()) {
@@ -95,57 +118,21 @@ export const Product = () => {
     }
   };
 
-  const checkIfItemInWishList = () => {
-    let newObj = { ...allProducts };
-    newObj.type = param.type;
-    newObj.category = param.category;
-    let result;
+  const handleWrongPath = () => {
     if (
-      param.category === "men" ||
-      param.category === "woman" ||
-      param.category === "children"
+      param.type !== "shirts" &&
+      param.type !== "Jackets" &&
+      param.type !== "hat" &&
+      param.type !== "shoes" &&
+      param.type !== "accessories" &&
+      param.type !== "pullover" &&
+      param.type !== "undefined"
     ) {
-      result = wishList.products.find(
-        (pro) =>
-          pro.id === newObj.id &&
-          pro.title === newObj.title &&
-          pro.type === newObj.type &&
-          pro.category === newObj.category
-      );
-      console.log("result with  type", result);
-      console.log("result with  type", newObj);
-    } else {
-      result = wishList.products.find(
-        (pro) =>
-          pro.id === newObj.id &&
-          pro.title === newObj.title &&
-          pro.category === newObj.category
-      );
-      console.log("result with no type", result);
-      console.log("result with no type", newObj);
+      navigate("/notfound");
     }
-
-    if (result) return true;
-    return false;
   };
 
-  useEffect(() => {
-    if (param.type) {
-      if (
-        param.type !== "shirts" &&
-        param.type !== "Jackets" &&
-        param.type !== "hat" &&
-        param.type !== "shoes" && // corrected spelling
-        param.type !== "accessories" &&
-        param.type !== "pullover" &&
-        param.type !== "undefined"
-      ) {
-        navigate("/notfound");
-      }
-    }
-
-    console.log(param);
-
+  const handleGettingData = () => {
     if (param.type === "undefined") {
       navigate(`/product/${param.category}/shirts/${param.id}`);
     } else if (param.category === "men") {
@@ -205,6 +192,14 @@ export const Product = () => {
     } else {
       navigate("/notfound");
     }
+  };
+
+  useEffect(() => {
+    setData(param.type);
+    if (param.type) {
+      handleWrongPath();
+    }
+    handleGettingData();
   }, [param.category, param.id, param.type]);
 
   return (
