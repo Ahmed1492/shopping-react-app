@@ -8,8 +8,8 @@ import { About } from './page/about/About';
 import { Contact } from './page/contact/Contact';
 import { Footer } from './component/Footer/Footer';
 import { MyProvider } from './context/MyProvider';
-import { NotFound } from './page/NotFound';
 import { WishList } from './component/wishList/WishList';
+import { NotFound } from './page/notFound/NotFound';
 export default function App() {
   return (
     <div className='app'>
